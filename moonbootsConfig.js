@@ -18,9 +18,9 @@ module.exports = {
     // The moonboots config
     moonboots: {
         // The base name of the javascript file served in the <script src="the_name.*.js">
-        jsFileName: 'generic-app',
+        jsFileName: 'nikoniko-board',
         // The base name of the css file served in the <link rel="stylesheet" src="the_name.*.css">
-        cssFileName: 'generic-app',
+        cssFileName: 'nikoniko-board',
         main: appDir + '/app.js',
         developmentMode: config.isDev,
         // Specify any non-commonjs libraries we wish to include.
