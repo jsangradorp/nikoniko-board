@@ -13,7 +13,7 @@
         "port": 3000
     },
     "app": {
-        "apiUrl": "http://localhost:3000",
+        "apiUrl": "http://localhost:8000",
         "debugMode": true
     }
 }
