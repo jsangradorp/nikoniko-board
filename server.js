@@ -39,6 +39,6 @@ server.register([
     // If everything loaded correctly, start the server:
     server.start(function (err) {
         if (err) throw err;
-        console.log('Generic app is running at: http://' + config.http.listen + ':' + config.http.port);
+        console.log('Nikoniko board is running at: http://' + config.http.listen + ':' + config.http.port);
     });
 });
