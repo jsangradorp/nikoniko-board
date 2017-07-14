@@ -7,6 +7,6 @@ module.exports = {
         'good'
     ],
     nextTo: function(value) {
-        return values[values.indexOf(value) + 1) % values.length]
+        return this.values[(this.values.indexOf(value) + 1) % this.values.length];
     }
 }
