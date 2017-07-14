@@ -15,7 +15,7 @@ module.exports = Model.extend({
         feeling: {
             type: 'string',
             values: feelings.values,
-            default: 'neutral' in feelings.values ? 'neutral' : feelings.values[0]
+            default: feelings.values[0]
         }
     },
     url: function() {
