@@ -7,14 +7,16 @@ var config = require('clientconfig');
 
 module.exports = AmpModel.extend({
     props: {
-        id: ['string'],
+        personid: ['number'],
+        boardid: ['number'],
+        date: [''],
         feeling: {
             type: 'string',
             values: ['bad', 'neutral', 'good'],
             default: 'neutral'
         }
     },
-    url: function() { return config.apiUrl + '/reportedfeelings/' + (this.id || '') },
+    url: function() { return config.apiUrl + '/reportedfeeling/' + this.personid },
     rotateFeeling: function() {
         var newFeeling;
         if (this.feeling == 'bad') {

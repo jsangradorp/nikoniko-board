@@ -5,10 +5,10 @@ var templates = require('../templates');
 var ReportedFeeling = require('../models/reportedFeeling');
 
 module.exports = View.extend({
-    initialize: function (options, model) {
-                console.log("Options are: " + options);
-                console.log("Passed-in model is: " + model);
-                this.model = new ReportedFeeling({board_id: 1, person_id: 1, date: '2017-07-10'});
+    initialize: function (options) {
+                console.log("The options are:", options);
+                this.model = new ReportedFeeling({personid: 1, boardid: 1, date: new Date().toISOString().slice(0,10)});
+                this.model.fetch();
     },
     template: templates.includes.reportedFeeling,
     bindings: {
