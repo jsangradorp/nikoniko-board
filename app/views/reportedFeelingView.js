@@ -5,9 +5,10 @@ var templates = require('../templates');
 var ReportedFeeling = require('../models/reportedFeeling');
 
 module.exports = View.extend({
-    initialize: function (options) {
-                console.log("The options are:", options);
-                this.model = new ReportedFeeling();
+    initialize: function (options, model) {
+                console.log("Options are: " + options);
+                console.log("Passed-in model is: " + model);
+                this.model = new ReportedFeeling({board_id: 1, person_id: 1, date: '2017-07-10'});
     },
     template: templates.includes.reportedFeeling,
     bindings: {

@@ -14,17 +14,18 @@ module.exports = AmpModel.extend({
             default: 'neutral'
         }
     },
-    url: function() { return config.apiUrl + '/people/' + this.id },
+    url: function() { return config.apiUrl + '/reportedfeelings/' + (this.id || '') },
     rotateFeeling: function() {
+        var newFeeling;
         if (this.feeling == 'bad') {
-            this.feeling = 'neutral';
+            newFeeling = 'neutral';
         }
         else if (this.feeling == 'neutral') {
-            this.feeling = 'good';
+            newFeeling = 'good';
         }
         else {
-            this.feeling = 'bad';
+            newFeeling = 'bad';
         };
-        this.save();
+        this.save({board_id: 1, person_id: 1, date: '2017-07-10', feeling: newFeeling}, {wait: true});
     }
 });
