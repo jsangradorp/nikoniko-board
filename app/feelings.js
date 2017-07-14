@@ -2,7 +2,7 @@
 
 module.exports = {
     values: [
-        'none'
+        'none',
         'ok',
         'good',
         'bad'
