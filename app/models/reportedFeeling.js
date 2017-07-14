@@ -1,33 +1,41 @@
 'use strict';
 
-// reportedFeeling Model - reportedFeeling.js
-var AmpModel = require('ampersand-model');
+
+var Model = require('ampersand-model');
 var config = require('clientconfig');
+var today = require('../today');
+var feelings = require('../feelings');
 
 
-module.exports = AmpModel.extend({
+module.exports = Model.extend({
     props: {
-        personid: ['number'],
-        boardid: ['number'],
-        date: [''],
+        person_id: ['number'],
+        board_id: ['number'],
+        date: ['date'],
         feeling: {
             type: 'string',
-            values: ['bad', 'neutral', 'good'],
-            default: 'neutral'
+            values: feelings.values,
+            default: 'neutral' in feelings.values ? 'neutral' : feelings.values[0];
         }
     },
-    url: function() { return config.apiUrl + '/reportedfeeling/' + this.personid },
+    url: function() {
+        return config.apiUrl + '/reportedfeelings/boards/' + this.board_id +
+            '/people/' + this.person_id + '/date/' + today.getTodayString();
+    },
     rotateFeeling: function() {
-        var newFeeling;
-        if (this.feeling == 'bad') {
-            newFeeling = 'neutral';
-        }
-        else if (this.feeling == 'neutral') {
-            newFeeling = 'good';
-        }
-        else {
-            newFeeling = 'bad';
-        };
-        this.save({board_id: 1, person_id: 1, date: '2017-07-10', feeling: newFeeling}, {wait: true});
+        this.save(
+                {
+                    board_id: this.board_id,
+                    person_id: this.person_id,
+                    date: today.getTodayString(),
+                    feeling: feelings.nextTo(this.feeling)
+                },
+                {
+                    wait: true,
+                    error: function() {
+                        alert("error sending value");
+                    }
+                }
+        );
     }
 });
