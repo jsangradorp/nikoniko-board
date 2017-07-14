@@ -2,6 +2,8 @@
 
 module.exports = {
     getTodayString: function() {
-        return new Date().toISOString().slice(0,10);
+        var todayLocal = new Date();
+        todayLocal.setUTCMinutes(todayLocal.getUTCMinutes() - todayLocal.getTimezoneOffset());
+        return todayLocal.toISOString().slice(0,10);
     }
 }
