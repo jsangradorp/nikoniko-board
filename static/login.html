@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Login to Nikoniko Boards</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <form>
+                    <p><b>Username:</b> admin <b>Password:</b> root</p>
+                    <div class="form-group">
+                        <label for="txtUsername">Username</label>
+                        <input type="text" class="form-control" id="txtUsername" value="admin">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPassword">Password</label>
+                        <input type="password" class="form-control" id="txtPassword" value="root">
+                    </div>
+                    <button type="button" id="btnLogin" class="btn btn-default">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $('#btnLogin').click(function(){
+        var username = $('#txtUsername').val();
+        var password = $('#txtPassword').val();
+
+        $.ajax('//0.0.0.0:8000/login', {
+            method: 'POST',
+            data: {
+                username: username,
+                password: password
+            }
+        }).fail(function(xhr, status, err){
+            alert('Invalid login request');
+            console.log(xhr);
+            console.log(status);
+            console.log(err);
+        }).done(function(data){
+            var user = data.user;
+            var token = data.token;
+
+            window.localStorage.id = user;
+            window.localStorage.token = token;
+
+            window.location = '/';
+        });
+    });
+</script>
+</body>
+</html>

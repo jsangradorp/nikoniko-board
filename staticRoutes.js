@@ -19,6 +19,12 @@ exports.register = function (plugin, options, next) {
         handler: {file: {path: 'static/favicon.ico'}}
     });
 
+    plugin.route({
+        method: 'GET',
+        path: '/login.html',
+        handler: {file: {path: 'static/login.html'}}
+    });
+
     next();
 };
 
