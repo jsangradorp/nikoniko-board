@@ -1,10 +1,17 @@
-var AmpersandModel = require('ampersand-model');
+'use strict';
+
+var BaseModel = require('./baseModel');
+var config = require('clientconfig');
 
 
-module.exports = AmpersandModel.extend({
+module.exports = BaseModel.extend({
     type: 'user',
+    urlRoot: config.apiUrl + '/people',
     props: {
-        id: ['string'],
-        username: ['string']
+        id: ['number'],
+        label: ['string']
+    },
+    session: {
+        token: ['string']
     }
 });

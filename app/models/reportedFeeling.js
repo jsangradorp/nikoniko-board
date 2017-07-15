@@ -1,13 +1,13 @@
 'use strict';
 
 
-var Model = require('ampersand-model');
+var BaseModel = require('./baseModel');
 var config = require('clientconfig');
 var today = require('../today');
 var feelings = require('../feelings');
 
 
-module.exports = Model.extend({
+module.exports = BaseModel.extend({
     props: {
         person_id: ['number'],
         board_id: ['number'],
