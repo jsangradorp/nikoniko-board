@@ -9,6 +9,7 @@ var _ = require('lodash');
 var domify = require('domify');
 var localLinks = require('local-links');
 var templates = require('../templates');
+var app = require('ampersand-app');
 
 
 module.exports = View.extend({
@@ -18,8 +19,14 @@ module.exports = View.extend({
         // this marks the correct nav item selected
         this.listenTo(app, 'page', this.handleNewPage);
     },
+    bindings: {
+        'model.label': {
+            hook: 'logged-in-user'
+        }
+    },
     events: {
-        'click a[href]': 'handleLinkClick'
+        'click a[href]': 'handleLinkClick',
+        'click [data-hook=action-logout': 'logout'
     },
     render: function () {
         // some additional stuff we want to add to the document head
@@ -68,5 +75,9 @@ module.exports = View.extend({
             e.preventDefault();
             app.navigate(localPath);
         }
+    },
+
+    logout: function(){
+        app.logout();
     }
 });
