@@ -10,7 +10,7 @@ var bind = require('amp-bind');
 
 app.extend({
   me: new Me({
-    id: parseInt(window.localStorage.id),
+    user_id: parseInt(window.localStorage.user_id),
     token: window.localStorage.token
   }),
   router: new Router(),

@@ -6,10 +6,13 @@ var config = require('clientconfig');
 
 module.exports = BaseModel.extend({
     type: 'user',
-    urlRoot: config.apiUrl + '/people',
+    idAttribute: 'user_id',
+    urlRoot: config.apiUrl + '/users',
     props: {
-        id: ['number'],
-        label: ['string']
+        user_id: ['number'],
+        name: ['string'],
+        email: ['string'],
+        person_id: ['number']
     },
     session: {
         token: ['string']

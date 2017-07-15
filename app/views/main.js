@@ -20,7 +20,7 @@ module.exports = View.extend({
         this.listenTo(app, 'page', this.handleNewPage);
     },
     bindings: {
-        'model.label': {
+        'model.name': {
             hook: 'logged-in-user'
         }
     },
