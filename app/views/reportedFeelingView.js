@@ -5,13 +5,14 @@ var View = require('ampersand-view');
 var templates = require('../templates');
 var ReportedFeeling = require('../models/reportedFeeling');
 var today = require('../today');
+var app = require('ampersand-app');
 
 
 module.exports = View.extend({
     initialize: function (options) {
                 this.model = new ReportedFeeling(
                         {
-                            person_id: 1,
+                            person_id: app.me.person.id,
                             board_id: 1,
                             date: today.getTodayString()
                         });

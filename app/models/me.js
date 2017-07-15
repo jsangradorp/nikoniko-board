@@ -2,6 +2,7 @@
 
 var BaseModel = require('./baseModel');
 var config = require('clientconfig');
+var PersonModel = require('./person');
 
 
 module.exports = BaseModel.extend({
@@ -11,8 +12,10 @@ module.exports = BaseModel.extend({
     props: {
         user_id: ['number'],
         name: ['string'],
-        email: ['string'],
-        person_id: ['number']
+        email: ['string']
+    },
+    children: {
+        person: PersonModel
     },
     session: {
         token: ['string']
