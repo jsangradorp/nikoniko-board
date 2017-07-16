@@ -6,7 +6,7 @@ var Me = require('./models/me');
 var domReady = require('domready');
 var bind = require('amp-bind');
 
-//window.app = app;
+window.app = app;
 
 app.extend({
   me: new Me({
