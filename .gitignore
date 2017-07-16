@@ -2,3 +2,4 @@
 /app/templates.js
 /stylesheets/app.css
 .DS_Store
+.*.sw?
