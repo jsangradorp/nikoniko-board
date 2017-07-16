@@ -1,11 +1,14 @@
 body
-  p
-    span(data-hook="logged-in-user")
-    |
-    |
-    span.logoutText
-      | (
-      a(href="javascript:void(0)" data-hook="action-logout") Logout
-      | )
+  .menubar
+    span.menuitem
+      a(href="/") Home
+    span.username
+      span(data-hook="logged-in-user")
+      |
+      |
+      span.logoutText
+        | (
+        a(href="javascript:void(0)" data-hook="action-logout") Logout
+        | )
   .container
     main(data-hook="page-container")
