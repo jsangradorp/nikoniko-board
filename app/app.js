@@ -16,7 +16,7 @@ app.extend({
   router: new Router(),
   init: function() {
     if (this.me.token == null) {
-      window.location = "/login.html";
+      window.location = "/login.html?returnTo=" + encodeURIComponent(window.location);
       return;
     }
 

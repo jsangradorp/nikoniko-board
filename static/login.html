@@ -31,7 +31,7 @@
         var email = $('#txtEmail').val();
         var password = $('#txtPassword').val();
 
-        $.ajax('//0.0.0.0:8000/login', {
+        $.ajax('//' + window.location.hostname + ':8000/login', {
             method: 'POST',
             data: {
                 email: email,
@@ -51,7 +51,8 @@
             window.localStorage.person = person;
             window.localStorage.token = token;
 
-            window.location = '/';
+            var newLocation = (new URLSearchParams(window.location.search)).get('returnTo');
+            window.location = newLocation ? newLocation : '/';
         });
     });
 </script>
