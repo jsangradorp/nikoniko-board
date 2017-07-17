@@ -11,7 +11,7 @@ module.exports = View.extend({
     render: function () {
         this.renderWithTemplate();
         this.renderCollection(
-                this.model.people,
+                this.parent.model.people,
                 BoardRowView,
                 this.queryByHook('board-rows'));
     }
