@@ -6,7 +6,6 @@ var PersonModel = require('./person');
 
 
 module.exports = BaseModel.extend({
-    type: 'user',
     idAttribute: 'user_id',
     urlRoot: config.apiUrl + '/users',
     props: {

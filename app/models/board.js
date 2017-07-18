@@ -6,7 +6,6 @@ var PeopleModel = require('./people');
 
 
 module.exports = BaseModel.extend({
-    type: 'user',
     urlRoot: config.apiUrl + '/boards',
     props: {
         id: ['number'],
