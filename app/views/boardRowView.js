@@ -11,8 +11,6 @@ var app = require('ampersand-app');
 module.exports = View.extend({
     template: templates.includes.boardRowView,
     bindings: {
-        'model.label': {
-            'hook': 'person-name'
-        }
+        'model.label': '[data-hook=person-name]'
     }
 });
