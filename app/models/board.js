@@ -40,6 +40,5 @@ module.exports = BaseModel.extend({
     initialize: function (boardId) {
         this.id = boardId;
         this.fetch();
-        //debugger;
     }
 });
