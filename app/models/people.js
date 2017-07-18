@@ -1,8 +1,8 @@
 'use strict';
 
-var Collection = require('ampersand-collection');
+var AmpersandCollection = require('ampersand-collection');
 var PersonModel = require('./person');
 
-module.exports = Collection.extend({
+module.exports = AmpersandCollection.extend({
     model: PersonModel
 });
