@@ -3,8 +3,8 @@
 
 var BaseModel = require('./baseModel');
 var config = require('clientconfig');
-var today = require('../today');
 var feelings = require('../feelings');
+var moment = require('moment');
 
 
 module.exports = BaseModel.extend({
@@ -20,14 +20,14 @@ module.exports = BaseModel.extend({
     },
     url: function() {
         return config.apiUrl + '/reportedfeelings/boards/' + this.board_id +
-            '/people/' + this.person_id + '/date/' + today.getTodayString();
+            '/people/' + this.person_id + '/date/' + moment().format('YYYY-MM-DD');
     },
     rotateFeeling: function() {
         this.save(
                 {
                     board_id: this.board_id,
                     person_id: this.person_id,
-                    date: today.getTodayString(),
+                    date: moment().format('YYYY-MM-DD'),
                     feeling: feelings.nextTo(this.feeling)
                 },
                 {

@@ -4,8 +4,8 @@
 var View = require('ampersand-view');
 var templates = require('../templates');
 var ReportedFeeling = require('../models/reportedFeeling');
-var today = require('../today');
 var app = require('ampersand-app');
+var moment = require('moment');
 
 
 module.exports = View.extend({
@@ -14,7 +14,7 @@ module.exports = View.extend({
                         {
                             person_id: app.me.person.id,
                             board_id: 1,
-                            date: today.getTodayString()
+                            date: moment().format('YYYY-MM-DD')
                         });
                 this.model.fetch();
     },

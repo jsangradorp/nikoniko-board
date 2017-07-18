@@ -22,6 +22,7 @@
     "hapi": "^8.0.0",
     "local-links": "^1.2.0",
     "lodash": "^3.6.0",
+    "moment": "^2.18.1",
     "moonboots_hapi": "^4.0.0",
     "puglatizer": "^1.2.0",
     "stylizer": "^2.1.0"
