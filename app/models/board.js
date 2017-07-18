@@ -13,7 +13,7 @@ module.exports = BaseModel.extend({
         from: ['date'],
         until: ['date']
     },
-    derived: {
+    /*derived: {
         dates: {
             deps: ['from', 'until'],
             fn: function () {
@@ -33,7 +33,7 @@ module.exports = BaseModel.extend({
                 return res;
             }
         }
-    },
+    },*/
     collections: {
         people: PeopleModel
     },
