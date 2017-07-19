@@ -4,7 +4,6 @@ var Router = require('./router');
 var MainView = require('./views/main');
 var Me = require('./models/me');
 var domReady = require('domready');
-var bind = require('amp-bind');
 
 window.app = app;
 
@@ -21,14 +20,14 @@ app.extend({
     }
 
     this.me.fetch({
-      success: bind(function(){
+      success: _.bind(function(){
         this.mainView = new MainView({
           model: this.me,
           el: document.body
         });
         this.router.history.start({pushState: true});
       }, this),
-      error: bind(function(){
+      error: _.bind(function(){
         this.logout();
       }, this)
     })
