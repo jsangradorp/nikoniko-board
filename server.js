@@ -26,6 +26,10 @@ server.ext('onPreResponse', function(request, reply) {
     return reply.continue();
 });
 
+server.on('response', function (request) {
+    console.log(request.info.remoteAddress + ': ' + request.method.toUpperCase() + ' ' + request.url.path + ' --> ' + request.response.statusCode);
+});
+
 // require moonboots_hapi plugin
 server.register([
     {
