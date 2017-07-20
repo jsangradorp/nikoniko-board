@@ -1,7 +1,7 @@
 var Hapi = require('hapi');
 var config = require('getconfig');
 var MoonBootsHapi = require('moonboots_hapi');
-var Inert = require('inert');
+//var Inert = require('inert');
 var moonbootsConfig = require('./moonbootsConfig');
 var staticRoutes = require('./staticRoutes');
 var internals = {};
@@ -36,9 +36,9 @@ server.register([
         register: MoonBootsHapi.register,
         options: moonbootsConfig
     },
-    {
-        register: Inert
-    },
+//    {
+//        register: Inert
+//    },
     {
         register: staticRoutes
     }
