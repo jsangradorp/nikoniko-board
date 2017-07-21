@@ -4,6 +4,7 @@ var helmet = require('helmet');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var Moonboots = require('moonboots-express');
+var morgan = require('morgan');
 var compress = require('compression');
 var config = require('getconfig');
 var semiStatic = require('semi-static');
@@ -21,6 +22,7 @@ var fixPath = function (pathString) {
 // -----------------
 // Configure express
 // -----------------
+app.use(morgan('combined'));
 app.use(compress());
 app.use(serveStatic(fixPath('static')));
 
@@ -59,7 +61,7 @@ if (config.isDev) {
 // Set our client config cookie
 // -----------------
 app.use(function (req, res, next) {
-    res.cookie('config', JSON.stringify(config.client));
+    res.cookie('config', JSON.stringify(config.app));
     next();
 });
 
