@@ -10,7 +10,7 @@ var config = require('getconfig');
 var semiStatic = require('semi-static');
 var serveStatic = require('serve-static');
 var stylizer = require('stylizer');
-var puglatizer = require('puglatizer');
+var templatizer = require('templatizer');
 var app = express();
 
 // a little helper for fixing paths for various environments
@@ -43,7 +43,7 @@ if (!config.isDev) {
 app.use(helmet.xssFilter());
 app.use(helmet.nosniff());
 
-app.set('view engine', 'pug');
+app.set('view engine', 'jade');
 
 
 // -----------------
@@ -88,7 +88,7 @@ new Moonboots({
             // js file is requested. Which means you can seamlessly change jade and
             // refresh in your browser to get new templates.
             if (config.isDev) {
-                puglatizer(fixPath('templates'), fixPath('app/templates.js'));
+                templatizer(fixPath('templates'), fixPath('app/templates.js'));
             }
         },
         beforeBuildCSS: function (done) {
