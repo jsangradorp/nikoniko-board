@@ -15,13 +15,15 @@ module.exports = View.extend({
     },
     render: function(options) {
         this.renderWithTemplate();
-        var model = new ReportedFeelingModel({
-            person_id: this.model.id,
-            board_id: 1,
-            date: moment().format('YYYY-MM-DD')
-        });
-        model.fetch();
-        for (var i = 8 ; i > 0; i--) {
+        var dates = this.parent.parent.model.dates;
+        for (var date in dates) {
+            console.log(dates[date].format('YYYY-MM-DD'));
+            var model = new ReportedFeelingModel({
+                person_id: this.model.id,
+                board_id: 1,
+                date: dates[date].format('YYYY-MM-DD')
+            });
+            model.fetch();
             var el = document.createElement('td');
             this.el.appendChild(el);
             this.renderSubview(new ReportedFeelingView({
