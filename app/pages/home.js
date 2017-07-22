@@ -5,10 +5,4 @@ var ReportedFeelingView = require('../views/reportedFeelingView')
 module.exports = View.extend({
     pageTitle: 'Nikoniko Board',
     template: templates.pages.home,
-    subviews: {
-        singleReportedFeeling: {
-            hook: 'singleReportedFeeling',
-            constructor: ReportedFeelingView
-        }
-    }
 });

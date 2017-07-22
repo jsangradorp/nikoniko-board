@@ -16,10 +16,6 @@ module.exports = View.extend({
         }
     },
     subviews: {
-        singleReportedFeeling: {
-            hook: 'singleReportedFeeling',
-            constructor: ReportedFeelingView
-        },
         board: {
             hook: 'board-view',
             constructor: BoardView
