@@ -21,7 +21,7 @@ module.exports = View.extend({
             date: moment().format('YYYY-MM-DD')
         });
         model.fetch();
-        for (var i = 0 ; i < 8; i++) {
+        for (var i = 8 ; i > 0; i--) {
             var el = document.createElement('td');
             this.el.appendChild(el);
             this.renderSubview(new ReportedFeelingView({

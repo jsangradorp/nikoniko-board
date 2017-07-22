@@ -9,9 +9,9 @@ module.exports = View.extend({
         var dates = this.model.dates;
         this.el = document.createElement('tr');
         this.el.appendChild(document.createElement('td'));
-        for (var i in dates) {
+        for (var i in dates.reverse()) {
             var cell = document.createElement('td');
-            cell.innerText = dates[i].format('dd');
+            cell.innerText = dates[i].format('dd D');
             this.el.appendChild(cell);
         }
         return this;
