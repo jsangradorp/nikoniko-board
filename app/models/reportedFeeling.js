@@ -11,7 +11,7 @@ module.exports = BaseModel.extend({
     props: {
         person_id: ['number'],
         board_id: ['number'],
-        date: ['date'],
+        date: ['text'],
         feeling: {
             type: 'string',
             values: feelings.values,
@@ -20,14 +20,14 @@ module.exports = BaseModel.extend({
     },
     url: function() {
         return config.apiUrl + '/reportedfeelings/boards/' + this.board_id +
-            '/people/' + this.person_id + '/date/' + moment().format('YYYY-MM-DD');
+            '/people/' + this.person_id + '/date/' + this.date;
     },
     rotateFeeling: function() {
         this.save(
                 {
                     board_id: this.board_id,
                     person_id: this.person_id,
-                    date: moment().format('YYYY-MM-DD'),
+                    date: this.date,
                     feeling: feelings.nextTo(this.feeling)
                 },
                 {
