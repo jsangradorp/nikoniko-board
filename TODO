@@ -1,3 +1,5 @@
 - Convert the procedural subview rendering into collections
 - Fetch all reportedFeelings along the board in a single call
 - Create a slightly more stylish boards page
+- Make it work on mobile
+- Signal weekends red
