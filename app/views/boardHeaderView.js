@@ -14,6 +14,9 @@ module.exports = View.extend({
         _.each(dates.reverse(), function(date) {
             var cell = document.createElement('td');
             cell.innerText = date.format('dd D');
+            if([6, 7].includes(date.isoWeekday())) {
+                cell.classList.add('weekend');
+            }
             self.el.appendChild(cell);
         });
         return this;

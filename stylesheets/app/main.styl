@@ -2,7 +2,7 @@ html
     height: 100%
     background: black
 body
-    background: lightgrey
+    background: whitesmoke
     max-width: 800px
     margin-top: 0
     margin-bottom: 0
@@ -13,9 +13,9 @@ body
 .logoutText
     font-size: smaller
 .menubar
-    border:1px solid #aaa;
-    padding:5px;
-    overflow:hidden;
+    border:1px solid darkgrey
+    padding:5px
+    overflow:hidden
     background: white
 .menubar>span
     padding: 5px
@@ -28,29 +28,36 @@ body
 .board
     margin-left: auto
     margin-right: auto
+    border-collapse: collapse
+.board td
+    text-align: center
+.board td.weekend
+    color: darkred
+    background-color: lightgrey
 .board-name
     text-align: center
     font-size: x-large
     margin: 5px
+    padding: 10px
     color: white
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px black
 .reportedFeeling
     width: 50px
     height: 50px
     border-radius: 20px
-    border: solid 1px #666
+    border: solid 1px dimgrey
     margin: 1px
 .reportedFeeling.active
     cursor: pointer
-    border: solid 2px #333
+    border: solid 2px black
 .none
     background: initial
 .ok
-    background: #ffffff url(/images/thumbup.png) 0px 0px/50px 50px
+    background: white url(/images/thumbup.png) 0px 0px/50px 50px
 .good
-    background: #ffffff url(/images/hornshand.png) 0px 0px/50px 50px
+    background: white url(/images/hornshand.png) 0px 0px/50px 50px
 .bad
-    background: #ffffff url(/images/thumbdown.png) 0px 0px/50px 50px
+    background: white url(/images/thumbdown.png) 0px 0px/50px 50px
 tr.boardRowView :nth-child(2) div
     opacity: 1
 tr.boardRowView :nth-child(3) div

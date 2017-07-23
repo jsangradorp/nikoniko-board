@@ -26,6 +26,9 @@ module.exports = View.extend({
             });
             model.fetch();
             var el = document.createElement('td');
+            if([6, 7].includes(date.isoWeekday())) {
+                el.classList.add('weekend');
+            }
             self.el.appendChild(el);
             self.renderSubview(new ReportedFeelingView({
                 model: model
