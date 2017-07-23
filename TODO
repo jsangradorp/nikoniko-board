@@ -1,3 +1,2 @@
 - Convert the procedural subview rendering into collections
-- Use _.each() instead of for loops
 - Fetch all reportedFeelings along the board in a single call.

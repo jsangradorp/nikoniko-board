@@ -2,6 +2,7 @@
 
 
 var View = require('ampersand-view');
+var _ = require('lodash');
 
 
 module.exports = View.extend({
@@ -9,11 +10,12 @@ module.exports = View.extend({
         var dates = this.model.dates;
         this.el = document.createElement('tr');
         this.el.appendChild(document.createElement('td'));
-        for (var i in dates.reverse()) {
+        var self = this;
+        _.each(dates.reverse(), function(date) {
             var cell = document.createElement('td');
-            cell.innerText = dates[i].format('dd D');
-            this.el.appendChild(cell);
-        }
+            cell.innerText = date.format('dd D');
+            self.el.appendChild(cell);
+        });
         return this;
     }
 });
