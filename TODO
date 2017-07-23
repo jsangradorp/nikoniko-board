@@ -3,3 +3,4 @@
 - Create a slightly more stylish boards page
 - Make it work on mobile
 - Un-fake the login
+- Check that from and until parameters work well.

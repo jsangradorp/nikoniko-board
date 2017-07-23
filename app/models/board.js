@@ -16,6 +16,12 @@ module.exports = BaseModel.extend({
         until: ['date']
     },
     derived: {
+        url: {
+            deps: ['id'],
+            fn: function() {
+                return '/boards' + id;
+            }
+        },
         dates: {
             deps: ['from', 'until'],
             fn: function () {
