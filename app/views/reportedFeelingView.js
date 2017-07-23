@@ -13,10 +13,14 @@ module.exports = View.extend({
         'model.feeling': {
             type: 'class',
             hook: 'feeling'
+        },
+        'model.active': {
+            type: 'booleanClass',
+            hook: 'feeling'
         }
     },
     events: {
-        'click': 'handleClick'
+        'click div.active': 'handleClick'
     },
     handleClick: function(e){
         this.model.rotateFeeling();

@@ -5,17 +5,26 @@ var BaseModel = require('./baseModel');
 var config = require('clientconfig');
 var feelings = require('../feelings');
 var moment = require('moment');
+var app = require('ampersand-app');
 
 
 module.exports = BaseModel.extend({
     props: {
         person_id: ['number'],
         board_id: ['number'],
-        date: ['text'],
+        date: ['string'],
         feeling: {
             type: 'string',
             values: feelings.values,
             default: feelings.values[0]
+        }
+    },
+    derived: {
+        active: {
+            deps: ['person_id', 'date'],
+            fn: function() {
+                return (this.person_id == app.me.person.id) && (this.date == moment().format('YYYY-MM-DD'));
+            }
         }
     },
     url: function() {
