@@ -2,4 +2,4 @@
 - Fetch all reportedFeelings along the board in a single call
 - Create a slightly more stylish boards page
 - Make it work on mobile
-- Un-fake the login
+- Hint to use HTTPS or refuse to use HTTP
