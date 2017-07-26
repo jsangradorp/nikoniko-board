@@ -19,7 +19,7 @@ module.exports = BaseModel.extend({
         url: {
             deps: ['id'],
             fn: function() {
-                return '/boards' + id;
+                return '/boards' + this.id;
             }
         },
         dates: {
