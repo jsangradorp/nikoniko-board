@@ -6,9 +6,10 @@ module.exports = View.extend({
     pageTitle: 'Nikoniko Board',
     template: templates.pages.home,
     render: function() {
+        var self = this;
         this.renderWithTemplate();
         this.renderCollection(
-                this.parent.model.people,
+                self.model.person.boards,
                 BoardListRowView,
                 this.queryByHook('boards-list'));
     }
