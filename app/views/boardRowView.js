@@ -21,7 +21,7 @@ module.exports = View.extend({
         _.each(dates, function(date) {
             var model = new ReportedFeelingModel({
                 person_id: self.model.id,
-                board_id: 1,
+                board_id: self.parent.parent.model.id,
                 date: date.format('YYYY-MM-DD')
             });
             model.fetch();
