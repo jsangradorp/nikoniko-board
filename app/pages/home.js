@@ -5,6 +5,11 @@ var BoardListRowView = require('../views/boardListRowView');
 module.exports = View.extend({
     pageTitle: 'Nikoniko Board',
     template: templates.pages.home,
+    bindings: {
+        'model.name': {
+            hook: 'user-name'
+        }
+    },
     render: function() {
         this.renderWithTemplate();
         this.renderCollection(
