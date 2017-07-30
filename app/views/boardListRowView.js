@@ -6,11 +6,11 @@ var templates = require('../templates');
 module.exports = View.extend({
     template: templates.includes.boardListRowView,
     bindings: {
-        'model.name': {
+        'model.label': {
             'type': 'text',
             'hook': 'board-list-row'
         },
-        'model.url': {
+        'model.pageurl': {
             'type': 'attribute',
             'name': 'href',
             'hook': 'board-list-row'

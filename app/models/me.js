@@ -3,6 +3,7 @@
 var BaseModel = require('./baseModel');
 var config = require('clientconfig');
 var PersonModel = require('./person');
+var BoardsModel = require('./boards');
 
 
 module.exports = BaseModel.extend({
@@ -15,6 +16,9 @@ module.exports = BaseModel.extend({
     },
     children: {
         person: PersonModel
+    },
+    collections: {
+        boards: BoardsModel
     },
     session: {
         token: ['string']
