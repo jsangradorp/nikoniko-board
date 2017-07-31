@@ -8,6 +8,7 @@ module.exports = BaseModel.extend({
     urlRoot: config.apiUrl + '/people',
     props: {
         id: ['number'],
-        label: ['string']
+        label: ['string'],
+        feelingsByDate: ['object']
     }
 });

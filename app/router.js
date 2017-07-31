@@ -20,7 +20,7 @@ module.exports = Router.extend({
 
     board: function(boardId) {
         app.trigger('page', new BoardPage({
-            model: new Board(parseInt(boardId))
+            model: new Board({ boardId: parseInt(boardId) }, { parse: true })
         }));
     },
 

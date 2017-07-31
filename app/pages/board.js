@@ -5,7 +5,6 @@ var templates = require('../templates');
 var ReportedFeelingView = require('../views/reportedFeelingView');
 var BoardRowView = require('../views/boardRowView');
 var BoardView = require('../views/boardView');
-var BoardModel = require('../models/board');
 
 module.exports = View.extend({
     pageTitle: 'Nikoniko Board',

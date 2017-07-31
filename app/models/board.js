@@ -37,8 +37,24 @@ module.exports = BaseModel.extend({
     collections: {
         people: PeopleModel
     },
-    initialize: function (boardId) {
-        this.id = boardId;
+    initialize: function (attrs) {
+        this.id = attrs.boardId;
         this.fetch();
+    },
+    parse: function(attrs) {
+        if (attrs.people) {
+            for (var i = 0, l = attrs.people.length; i < l; ++i) {
+                attrs.people[i].feelingsByDate = {};
+                var person = attrs.people[i];
+                if (person.reportedfeelings) {
+                    for (var j = 0, ll = person.reportedfeelings.length; j < ll; ++j) {
+                        var feeling = person.reportedfeelings[j];
+                        attrs.people[i].feelingsByDate[feeling.date] = feeling.feeling;
+                    }
+                }
+                delete attrs.people[i].reportedfeelings;
+            }
+        }
+        return attrs;
     }
 });
