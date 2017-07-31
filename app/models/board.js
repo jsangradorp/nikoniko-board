@@ -12,24 +12,20 @@ module.exports = BaseModel.extend({
     props: {
         id: ['number'],
         label: ['string'],
-        from: ['date'],
-        until: ['date']
+        from: ['string'],
+        until: ['string']
     },
     derived: {
         dates: {
             deps: ['from', 'until'],
             fn: function () {
-                var _until = moment(_.get(this, 'until', {})).startOf('day');
-                var _from = this.from ? moment(this.from).startOfDay() : _until.clone().subtract(7, 'days');
-                var from = moment.min(_until, _from);
-                var until = moment.max(until, _from);
                 var res = [];
-                var cursor = from.clone();
-                do {
+                var cursor = moment(this.from);
+                var until = moment(this.until);
+                while (cursor.isSameOrBefore(until)) {
                     res.push(cursor.clone());
                     cursor.add(1, 'day');
-
-                } while (cursor.isBefore(until));
+                };
                 return res;
             }
         }
@@ -42,6 +38,10 @@ module.exports = BaseModel.extend({
         this.fetch();
     },
     parse: function(attrs) {
+        var _until = moment(attrs.until).startOf('day');
+        var _from = (attrs.from && attrs.from > '') ? moment(attrs.from).startOf('day') : _until.clone().subtract(7, 'days');
+        attrs.from = moment.min(_until, _from).format('YYYY-MM-DD');
+        attrs.until = moment.max(_until, _from).format('YYYY-MM-DD');
         if (attrs.people) {
             for (var i = 0, l = attrs.people.length; i < l; ++i) {
                 attrs.people[i].feelingsByDate = {};
