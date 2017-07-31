@@ -4,3 +4,4 @@
 - Hint to use HTTPS or refuse to use HTTP
 - Rename 'date' to 'dates' in URLs where applicable
 - Parameterize the stylesheets
+- Tests ?
