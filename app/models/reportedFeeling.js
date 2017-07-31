@@ -29,7 +29,7 @@ module.exports = BaseModel.extend({
     },
     url: function() {
         return config.apiUrl + '/reportedfeelings/boards/' + this.board_id +
-            '/people/' + this.person_id + '/date/' + this.date;
+            '/people/' + this.person_id + '/dates/' + this.date;
     },
     rotateFeeling: function() {
         this.save(
