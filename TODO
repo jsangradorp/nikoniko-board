@@ -3,3 +3,4 @@
 - Check that from and until parameters work well.
 - Hint to use HTTPS or refuse to use HTTP
 - Rename 'date' to 'dates' in URLs where applicable
+- Parameterize the stylesheets
