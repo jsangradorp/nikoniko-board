@@ -1,3 +1,5 @@
+- Install to OVH servers
+- Install to heroku
 - Convert the procedural subview rendering into collections
 - Make it work on mobile
 - Hint to use HTTPS or refuse to use HTTP
