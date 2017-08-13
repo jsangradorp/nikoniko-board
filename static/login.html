@@ -31,7 +31,7 @@
         var email = $('#txtEmail').val();
         var password = $('#txtPassword').val();
 
-        $.ajax('//' + window.location.hostname + ':8000/login', {
+        $.ajax('//' + window.location.hostname + ':8443/login', {
             method: 'POST',
             data: {
                 email: email,
