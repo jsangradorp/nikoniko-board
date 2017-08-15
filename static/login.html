@@ -31,7 +31,7 @@
         var email = $('#txtEmail').val();
         var password = $('#txtPassword').val();
 
-        $.ajax('//' + window.location.hostname + ':8443/login', {
+        $.ajax('https://api.nikonikoboards.com/login', {
             method: 'POST',
             data: {
                 email: email,

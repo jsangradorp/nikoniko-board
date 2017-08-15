@@ -13,7 +13,7 @@
         "port": 3001
     },
     "app": {
-        "apiUrl": "https://0.0.0.0:8443",
+        "apiUrl": "https://api.nikonikoboards.com",
         "debugMode": true
     }
 }
