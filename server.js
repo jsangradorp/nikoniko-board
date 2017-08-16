@@ -24,7 +24,15 @@ var fixPath = function (pathString) {
 // -----------------
 app.use(morgan('combined'));
 app.use(compress());
-app.use(serveStatic(fixPath('static')));
+app.use(
+    serveStatic(fixPath('static'),
+    {
+        setHeaders: function(res, path, stat) {
+                        res.cookie('config', JSON.stringify(config.app));
+        }
+    }
+    )
+);
 
 // we only want to expose tests in dev
 if (config.isDev) {
