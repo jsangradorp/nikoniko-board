@@ -14,6 +14,14 @@ module.exports = BaseModel.extend({
         name: ['string'],
         email: ['string']
     },
+    derived: {
+        deps: ['user_id'],
+        editurl: {
+            fn: function() {
+                return "/users/" + this.user_id;
+            }
+        }
+    },
     children: {
         person: PersonModel
     },

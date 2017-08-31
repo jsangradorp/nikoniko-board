@@ -22,6 +22,11 @@ module.exports = View.extend({
     bindings: {
         'model.name': {
             hook: 'logged-in-user'
+        },
+        'model.editurl': {
+            type: "attribute",
+            name: "href",
+            hook: "logged-in-user"
         }
     },
     events: {
