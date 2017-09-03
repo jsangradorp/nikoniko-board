@@ -4,7 +4,7 @@ var HomePage = require('./pages/home');
 var BoardPage = require('./pages/board');
 var UserPage = require('./pages/user');
 var Board = require('./models/board');
-var Me = require('./models/me');
+//var Me = require('./models/me');
 var queryString = require('query-string');
 
 module.exports = Router.extend({
@@ -34,7 +34,8 @@ module.exports = Router.extend({
 
     user: function(userId) {
         app.trigger('page', new UserPage({
-            model: new Me({user_id: parseInt(userId)})
+            //model: new Me({user_id: parseInt(userId)})
+            model: app.me
         }));
     },
 
