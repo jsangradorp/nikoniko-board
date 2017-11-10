@@ -25,8 +25,7 @@ module.exports = View.extend({
                         //app.navigate('/');
                     },
                     error: function(model, response, options) {
-                        //alert(model + response + options);
-                        alert(response);
+                        console.log(JSON.stringify(response));
                     }
                 });
                 return false;
