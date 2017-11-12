@@ -8,14 +8,14 @@ module.exports = FormView.extend({
             new InputView({
                 label: 'Name',
                 name: 'name',
-                value: this.model && this.model.name,
+                value: '',
                 required: false,
                 placeholder: 'Name'
             }),
             new InputView({
                 label: 'Email',
                 name: 'email',
-                value: this.model && this.model.email,
+                value: '',
                 required: false,
                 placeholder: 'Email'
             }),

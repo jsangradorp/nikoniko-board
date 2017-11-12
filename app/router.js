@@ -2,16 +2,16 @@ var app = require('ampersand-app');
 var Router = require('ampersand-router');
 var HomePage = require('./pages/home');
 var BoardPage = require('./pages/board');
-var UserPage = require('./pages/user');
+var UserProfilePage = require('./pages/userProfile');
+var UserProfileModel = require('./models/userProfile');
 var Board = require('./models/board');
-//var Me = require('./models/me');
 var queryString = require('query-string');
 
 module.exports = Router.extend({
     routes: {
         '': 'home',
         'boards/:boardId': 'board',
-        'users/:userId': 'user',
+        'userProfiles/:userId': 'userProfile',
         '(*path)': 'catchAll'
     },
 
@@ -32,10 +32,10 @@ module.exports = Router.extend({
         }));
     },
 
-    user: function(userId) {
-        app.trigger('page', new UserPage({
-            //model: new Me({user_id: parseInt(userId)})
-            model: app.me
+    userProfile: function(userId) {
+        app.trigger('page', new UserProfilePage({
+            model: new UserProfileModel({user_id: parseInt(userId)})
+            //model: app.me
         }));
     },
 

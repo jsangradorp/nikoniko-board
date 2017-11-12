@@ -8,7 +8,7 @@ var BoardsModel = require('./boards');
 
 module.exports = BaseModel.extend({
     idAttribute: 'user_id',
-    urlRoot: config.apiUrl + '/users',
+    urlRoot: config.apiUrl + '/userProfiles',
     props: {
         user_id: ['number'],
         name: ['string'],
@@ -18,17 +18,11 @@ module.exports = BaseModel.extend({
         deps: ['user_id'],
         editurl: {
             fn: function() {
-                return "/userProfiles/" + this.user_id;
+                return "/users/" + this.user_id;
             }
         }
     },
-    children: {
-        person: PersonModel
-    },
-    collections: {
-        boards: BoardsModel
-    },
     session: {
-        token: ['string']
+        password: ['string']
     }
 });
