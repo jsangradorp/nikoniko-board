@@ -17,9 +17,14 @@ module.exports = View.extend({
                 self.model.save(data, {
                     patch: true,
                     wait: true,
-                    success: function () {
+                    success: function (data) {
+                        console.debug(JSON.stringify(data));
                         alert('Success!');
-                        //app.navigate('/');
+                        if (data.password && data.password != "") {
+                            delete window.localStorage.token;
+                            delete window.localStorage.id;
+                            window.location = '/login.html';
+                        }
                     },
                     error: function(model, response, options) {
                         console.error(JSON.stringify(response));

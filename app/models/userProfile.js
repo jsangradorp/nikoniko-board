@@ -12,7 +12,8 @@ module.exports = BaseModel.extend({
     props: {
         user_id: ['number'],
         name: ['string'],
-        email: ['string']
+        email: ['string'],
+        password: ['string']
     },
     derived: {
         deps: ['user_id'],
@@ -21,8 +22,5 @@ module.exports = BaseModel.extend({
                 return "/users/" + this.user_id;
             }
         }
-    },
-    session: {
-        password: ['string']
     }
 });
