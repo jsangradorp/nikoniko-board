@@ -1,18 +1,18 @@
 'use strict';
 
 var BaseModel = require('./baseModel');
-
+var config = require('clientconfig');
 
 module.exports = BaseModel.extend({
     props: {
-        id: ['number'],
+        board_id: ['number'],
         label: ['string']
     },
     derived: {
         pageurl: {
-            deps: [ 'id'  ],
+            deps: [ 'board_id'  ],
             fn: function() {
-                return '/boards/' + this.id;
+                return '/boards/' + this.board_id;
             }
         }
     }
