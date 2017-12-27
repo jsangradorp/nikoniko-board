@@ -2,12 +2,12 @@
 
 # LOCAL="y" ./run.sh
 
-trap "kill_children" 0
 kill_children() {
         echo
             [ -n "$proxypid"  ] && kill -9 $proxypid 2> /dev/null
 
 }
+trap "kill_children" 0
 
 if [ "$LOCAL" = "y" -o "$LOCAL" = "1" -o "$LOCAL" = "t" ] ; then
     API_URL="https://127.0.0.1:8443"
