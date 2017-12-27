@@ -21,7 +21,7 @@ module.exports = View.extend({
         _.each(dates, function(date) {
             var dateString = date.format('YYYY-MM-DD');
             var model = new ReportedFeelingModel({
-                person_id: self.model.id,
+                person_id: self.model.person_id,
                 board_id: self.parent.parent.model.id,
                 date: dateString,
                 feeling: dateString in self.model.feelingsByDate ? self.model.feelingsByDate[dateString] : 'none'

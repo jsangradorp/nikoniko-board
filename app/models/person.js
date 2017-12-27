@@ -7,7 +7,7 @@ var config = require('clientconfig');
 module.exports = BaseModel.extend({
     urlRoot: config.apiUrl + '/people',
     props: {
-        id: ['number'],
+        person_id: ['number'],
         label: ['string'],
         feelingsByDate: ['object']
     }

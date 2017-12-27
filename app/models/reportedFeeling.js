@@ -23,7 +23,7 @@ module.exports = BaseModel.extend({
         active: {
             deps: ['person_id', 'date'],
             fn: function() {
-                return (this.person_id == app.me.person.id) && (this.date == moment().format('YYYY-MM-DD'));
+                return (this.person_id == app.me.person.person_id) && (this.date == moment().format('YYYY-MM-DD'));
             }
         }
     },
