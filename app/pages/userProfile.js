@@ -3,6 +3,7 @@
 var View = require('ampersand-view');
 var templates = require('../templates');
 var UserForm = require('../forms/user');
+var app = require('../app');
 
 module.exports = View.extend({
     pageTitle: 'Nikoniko Board - User',
@@ -19,7 +20,10 @@ module.exports = View.extend({
                     wait: true,
                     success: function (data) {
                         console.debug(JSON.stringify(data));
-                        alert('Success!');
+                        //alert('Success!');
+                        if (data.name && data.name != "") {
+                            app.model.name = data.name;
+                        }
                         if (data.password && data.password != "") {
                             delete window.localStorage.token;
                             delete window.localStorage.id;

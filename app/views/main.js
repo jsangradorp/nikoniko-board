@@ -21,7 +21,7 @@ module.exports = View.extend({
     },
     bindings: {
         'model.name': {
-            hook: 'logged-in-user'
+            hook: 'logged-in-user-name'
         },
         'model.editurl': {
             type: "attribute",

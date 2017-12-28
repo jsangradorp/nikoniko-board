@@ -13,13 +13,6 @@ module.exports = FormView.extend({
                 placeholder: 'Name'
             }),
             new InputView({
-                label: 'Email',
-                name: 'email',
-                value: '',
-                required: false,
-                placeholder: 'Email'
-            }),
-            new InputView({
                 label: 'Password',
                 name: 'password',
                 type: 'password',
