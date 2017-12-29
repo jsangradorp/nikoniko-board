@@ -3,7 +3,7 @@
 var View = require('ampersand-view');
 var templates = require('../templates');
 var UserForm = require('../forms/user');
-var app = require('../app');
+var app = require('ampersand-app');
 
 module.exports = View.extend({
     pageTitle: 'Nikoniko Board - User',
@@ -20,9 +20,9 @@ module.exports = View.extend({
                     wait: true,
                     success: function (data) {
                         console.debug(JSON.stringify(data));
-                        //alert('Success!');
+                        alert('User profile updated');
                         if (data.name && data.name != "") {
-                            app.model.name = data.name;
+                            app.me.name = data.name;
                         }
                         if (data.password && data.password != "") {
                             delete window.localStorage.token;
@@ -41,10 +41,10 @@ module.exports = View.extend({
         this.model.fetch(
                 {
                     success: function(model) {
-                        self.form.setValues({name: model.name, email: model.email});
+                        self.form.setValues({name: model.name});
                     },
                     error: function(model, response) {
-                        console.warning(JSON.stringify(response));
+                        console.warn(JSON.stringify(response));
                     }
                 });
         this.renderSubview(this.form);

@@ -12,7 +12,6 @@ module.exports = BaseModel.extend({
     props: {
         user_id: ['number'],
         name: ['string'],
-        email: ['string'],
         password: ['string']
     },
     derived: {
