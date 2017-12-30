@@ -1,7 +1,5 @@
 - Add interface to edit user's persons and boards
 - Add an admin user to the default install
-- Install to heroku
-- Make it work on mobile
 - Parameterize the stylesheets
 - Tests ?
 - iPhone/Android apps ? Cordova ? React.js ?
