@@ -29,6 +29,7 @@
     "lodash": "^3.6.0",
     "moment": "^2.18.1",
     "moonboots-express": "^3.0.0",
+    "moonboots-static": "^2.0.1",
     "morgan": "^1.8.2",
     "query-string": "^5.0.0",
     "semi-static": "^0.0.5",
