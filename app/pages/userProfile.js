@@ -8,7 +8,7 @@ var app = require('ampersand-app');
 module.exports = View.extend({
     pageTitle: 'Nikoniko Board - User',
     template: templates.pages.userProfile,
-    render() {
+    render: function() {
         var self= this;
         this.renderWithTemplate();
         this.form = new UserForm({
