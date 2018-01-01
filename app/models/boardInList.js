@@ -1,7 +1,6 @@
 'use strict';
 
 var BaseModel = require('./baseModel');
-var config = require('clientconfig');
 
 module.exports = BaseModel.extend({
     props: {
