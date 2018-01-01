@@ -7,6 +7,8 @@ DEST="$@"
 
 cd $(dirname $0)/..
 
+./node_modules/.bin/moonboots-static ./conf/moonboots-static.js
+
 if ! which -s cdist ; then
     echo No cdist available - installing in a virtualenv
     virtualenv .cdist-venv

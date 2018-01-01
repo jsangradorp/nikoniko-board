@@ -1,15 +1,5 @@
 #!/bin/sh -e
 __cdistmarker
 
-export CDIST_ORDER_DEPENDENCY=on
-__package apt-transport-https
-
-__apt_key_uri nodejs --uri https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-__apt_source nodejs --uri https://deb.nodesource.com/node_9.x --include-src --component main
-
-__package_update_index
-__package nodejs
-__package_upgrade_all --apt-dist-upgrade --apt-clean
-unset CDIST_ORDER_DEPENDENCY
 
 # vim: syntax=sh
