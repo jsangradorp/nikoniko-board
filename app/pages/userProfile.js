@@ -27,7 +27,7 @@ module.exports = View.extend({
                         if (data.password && data.password != "") {
                             delete window.localStorage.token;
                             delete window.localStorage.id;
-                            window.location = '/login.html';
+                            window.location = 'login.html';
                         }
                     },
                     error: function(model, response, options) {

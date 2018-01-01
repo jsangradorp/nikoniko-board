@@ -15,7 +15,7 @@ app.extend({
   router: new Router(),
   init: function() {
     if (this.me.token == null) {
-      window.location = "/login.html?returnTo=" + encodeURIComponent(window.location);
+      window.location = "login.html?returnTo=" + encodeURIComponent(window.location);
       return;
     }
 
@@ -42,7 +42,7 @@ app.extend({
     if(confirm('Do you really want to log out?')) {
       delete window.localStorage.token;
       delete window.localStorage.id;
-      window.location = '/login.html';
+      window.location = 'login.html';
     }
   }
 });
