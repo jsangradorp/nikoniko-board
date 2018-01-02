@@ -1,2 +1,4 @@
+- Have config without cookies
+- Get login page inside templates and stylesheeting
 - Stylize the login (and forgotten password?) page
 - Add interface to edit user's persons and boards
