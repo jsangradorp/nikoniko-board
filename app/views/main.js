@@ -83,6 +83,9 @@ module.exports = View.extend({
     },
 
     logout: function(){
-        app.logout();
+        if(confirm('Do you really want to log out?')) {
+            app.logout();
+
+        }
     }
 });

@@ -39,11 +39,9 @@ app.extend({
     });
   },
   logout: function(){
-    if(confirm('Do you really want to log out?')) {
       delete window.localStorage.token;
       delete window.localStorage.id;
       window.location = 'login.html';
-    }
   }
 });
 
