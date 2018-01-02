@@ -7,7 +7,7 @@ DEST="$@"
 
 cd $(dirname $0)/..
 
-./node_modules/.bin/moonboots ./conf/moonboots-static.js
+API_URL="https://api.nikonikoboards.com" ./node_modules/.bin/moonboots ./conf/moonboots-static.js
 
 if ! which -s cdist ; then
     echo No cdist available - installing in a virtualenv

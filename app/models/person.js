@@ -1,7 +1,7 @@
 'use strict';
 
 var BaseModel = require('./baseModel');
-var config = require('clientconfig');
+var config = require('../appconfig');
 
 
 module.exports = BaseModel.extend({

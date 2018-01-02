@@ -2,7 +2,7 @@
 
 
 var BaseModel = require('./baseModel');
-var config = require('clientconfig');
+var config = require('../appconfig');
 var feelings = require('../feelings');
 var moment = require('moment');
 var app = require('ampersand-app');

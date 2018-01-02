@@ -1,4 +1,4 @@
-{
+var config = {
     "isDev": true,
     "isSecure": false,
     "session": {
@@ -10,10 +10,12 @@
     },
     "http": {
         "listen": "0.0.0.0",
-        "port": "$SELF_PORT"
+        "port": 9080
     },
     "app": {
-        "apiUrl": "$API_URL",
-        "debugMode": true
+        "apiUrl": "https://api.nikonikoboards.com",
+        "debugMode": false
     }
 }
+
+module.exports = config;
