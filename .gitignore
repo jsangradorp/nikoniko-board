@@ -3,3 +3,4 @@
 /stylesheets/app.css
 .DS_Store
 .*.sw?
+/.cdist-venv/
