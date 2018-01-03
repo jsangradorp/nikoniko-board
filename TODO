@@ -1,3 +1,4 @@
 - Get login page inside templates and stylesheeting
+- rename 'home' page to 'boardlist'
 - Stylize the login (and forgotten password?) page
 - Add interface to edit user's persons and boards
