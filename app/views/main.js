@@ -20,9 +20,15 @@ module.exports = View.extend({
         this.listenTo(app, 'page', this.handleNewPage);
     },
     bindings: {
-        'model.name': {
-            hook: 'logged-in-user-name'
-        },
+        'model.name': [
+            {
+                hook: 'logged-in-user-name'
+            },
+            {
+                type: 'toggle',
+                selector: '.menubar'
+            }
+        ],
         'model.editurl': {
             type: "attribute",
             name: "href",

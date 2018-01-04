@@ -37,7 +37,6 @@ module.exports = View.extend({
                 return false;
             }
         });
-        var self = this;
         this.model.fetch(
                 {
                     success: function(model) {

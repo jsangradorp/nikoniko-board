@@ -2,6 +2,8 @@ var app = require('ampersand-app');
 var Router = require('ampersand-router');
 var HomePage = require('./pages/home');
 var BoardPage = require('./pages/board');
+var LoginPage = require('./pages/login');
+var ForgotPasswordPage = require('./pages/forgotpassword');
 var UserProfilePage = require('./pages/userProfile');
 var UserProfileModel = require('./models/userProfile');
 var Board = require('./models/board');
@@ -10,6 +12,8 @@ var queryString = require('query-string');
 module.exports = Router.extend({
     routes: {
         '': 'home',
+        'login': 'login',
+        'forgotpassword': 'forgotpassword',
         'boards/:boardId': 'board',
         'userProfiles/:userId': 'userProfile',
         '(*path)': 'catchAll'
@@ -20,6 +24,14 @@ module.exports = Router.extend({
         app.trigger('page', new HomePage({
             model: app.me
         }));
+    },
+
+    login: function(){
+        app.trigger('page', new LoginPage());
+    },
+
+    forgotpassword: function(){
+        app.trigger('page', new ForgotPasswordPage());
     },
 
     board: function(boardId, queryStringParams) {
