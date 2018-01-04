@@ -9,7 +9,7 @@ var domReady = require('domready');
 window.app = app;
 
 app.extend({
-  router: new Router(),
+    router: new Router(),
     init: function(optionalPage) {
         this.me = new Me({
             user_id: parseInt(window.localStorage.user_id),
