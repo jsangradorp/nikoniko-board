@@ -4,6 +4,7 @@ var HomePage = require('./pages/home');
 var BoardPage = require('./pages/board');
 var LoginPage = require('./pages/login');
 var ForgotPasswordPage = require('./pages/forgotpassword');
+var SetPasswordPage = require('./pages/setpassword');
 var UserProfilePage = require('./pages/userProfile');
 var UserProfileModel = require('./models/userProfile');
 var Board = require('./models/board');
@@ -14,6 +15,7 @@ module.exports = Router.extend({
         '': 'home',
         'login': 'login',
         'forgotpassword': 'forgotpassword',
+        'setpassword': 'setpassword',
         'boards/:boardId': 'board',
         'userProfiles/:userId': 'userProfile',
         '(*path)': 'catchAll'
@@ -32,6 +34,10 @@ module.exports = Router.extend({
 
     forgotpassword: function(){
         app.trigger('page', new ForgotPasswordPage());
+    },
+
+    setpassword: function(){
+        app.trigger('page', new SetPasswordPage());
     },
 
     board: function(boardId, queryStringParams) {
