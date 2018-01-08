@@ -4,7 +4,7 @@
 var View = require('ampersand-view');
 var templates = require('../templates');
 var ReportedFeelingView = require('./reportedFeelingView');
-var ReportedFeelingModel = require('../models/reportedFeeling')
+var ReportedFeelingModel = require('../models/reportedFeeling');
 var setweekend = require('../setweekend');
 var _ = require('lodash');
 

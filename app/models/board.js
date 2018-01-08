@@ -25,7 +25,7 @@ module.exports = BaseModel.extend({
                 while (cursor.isSameOrBefore(until)) {
                     res.push(cursor.clone());
                     cursor.add(1, 'day');
-                };
+                }
                 return res;
             }
         }

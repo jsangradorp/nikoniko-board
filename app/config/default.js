@@ -16,6 +16,6 @@ var config = {
         "apiUrl": "https://api.nikonikoboards.com",
         "debugMode": false
     }
-}
+};
 
 module.exports = config;

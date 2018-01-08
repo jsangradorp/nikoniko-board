@@ -7,6 +7,6 @@ module.exports = Model.extend({
       headers: {
         'Authorization': app.me.token
       }
-    }
+    };
   }
 });
