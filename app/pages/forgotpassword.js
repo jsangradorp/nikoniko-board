@@ -15,13 +15,13 @@ module.exports = View.extend({
         this.form = new ForgotPasswordForm({
             el: this.queryByHook('forgotpassword-form'),
             submitCallback: function (data) {
-                var rawRequest = sync('create', null, {
+                sync('create', null, {
                     url: config.apiUrl + '/passwordResetCode',
-                    headers: {"Content-Type": "application/json"},
+                    headers: {'Content-Type': 'application/json'},
                     data: JSON.stringify({
                         email: data.email
                     }),
-                    success: function(body, status, responseObject) {
+                    success: function() {
                         alert('Code sent to email ' + data.email);
                         app.navigate('setpassword');
                     },

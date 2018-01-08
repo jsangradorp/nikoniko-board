@@ -9,7 +9,6 @@ var _ = require('lodash');
 var domify = require('domify');
 var localLinks = require('local-links');
 var templates = require('../templates');
-var app = require('ampersand-app');
 
 
 module.exports = View.extend({
@@ -30,9 +29,9 @@ module.exports = View.extend({
             }
         ],
         'model.editurl': {
-            type: "attribute",
-            name: "href",
-            hook: "logged-in-user"
+            type: 'attribute',
+            name: 'href',
+            hook: 'logged-in-user'
         }
     },
     events: {
@@ -48,7 +47,7 @@ module.exports = View.extend({
 
         // init and configure our page switcher
         this.pageSwitcher = new ViewSwitcher(this.queryByHook('page-container'), {
-            show: function (newView, oldView) {
+            show: function (newView) {
                 // it's inserted and rendered for me
                 document.title = _.result(newView, 'pageTitle') || 'Nikoniko board';
                 document.scrollTop = 0;

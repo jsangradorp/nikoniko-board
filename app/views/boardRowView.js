@@ -14,7 +14,7 @@ module.exports = View.extend({
     bindings: {
         'model.label': '[data-hook=person-name]'
     },
-    render: function(options) {
+    render: function() {
         this.renderWithTemplate();
         var dates = this.parent.parent.model.dates;
         var self = this;

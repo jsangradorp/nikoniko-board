@@ -33,18 +33,18 @@ module.exports = BaseModel.extend({
     },
     rotateFeeling: function() {
         this.save(
-                {
-                    board_id: this.board_id,
-                    person_id: this.person_id,
-                    date: this.date,
-                    feeling: feelings.nextTo(this.feeling)
-                },
-                {
-                    wait: true,
-                    error: function() {
-                        alert("error sending value");
-                    }
+            {
+                board_id: this.board_id,
+                person_id: this.person_id,
+                date: this.date,
+                feeling: feelings.nextTo(this.feeling)
+            },
+            {
+                wait: true,
+                error: function() {
+                    alert('error sending value');
                 }
+            }
         );
     }
 });

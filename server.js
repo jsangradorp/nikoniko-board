@@ -26,11 +26,11 @@ app.use(morgan('combined'));
 app.use(compress());
 app.use(
     serveStatic(fixPath('static'),
-    {
-        setHeaders: function(res, path, stat) {
-                        res.cookie('config', JSON.stringify(config.app));
+        {
+            setHeaders: function(res) {
+                res.cookie('config', JSON.stringify(config.app));
+            }
         }
-    }
     )
 );
 
@@ -120,4 +120,4 @@ new Moonboots({
 
 // listen for incoming http requests on the port as specified in our config
 app.listen(config.http.port);
-console.log('Express App is running at: http://' + config.http.listen + ':' + config.http.port + ' Yep. That\'s pretty awesome.');
+console.log('Express App is running at: http://' + config.http.listen + ':' + config.http.port + ' Yep. That\'s pretty awesome.'); // eslint-disable-line no-console

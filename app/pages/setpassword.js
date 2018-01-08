@@ -15,21 +15,19 @@ module.exports = View.extend({
         this.form = new SetPasswordForm({
             el: this.queryByHook('setpassword-form'),
             submitCallback: function (data) {
-                var rawRequest = sync('create', null, {
+                sync('create', null, {
                     url: config.apiUrl + '/passwordReset/' + data.password_reset_code.toString(),
-                    headers: {"Content-Type": "application/json"},
+                    headers: {'Content-Type': 'application/json'},
                     data: JSON.stringify({
                         password: data.password
                     }),
-                    success: function(body, status, responseObject) {
+                    success: function() {
                         alert('Password successfully set');
                         app.me.clear();
                         app.navigate('login');
                     },
-                    error: function(responseObject, status, message) {
+                    error: function() {
                         alert('Invalid password set request');
-                        console.log(responseObject);
-                        console.log('Error: ' + message);
                     }
                 });
                 return false;

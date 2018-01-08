@@ -4,7 +4,6 @@ var View = require('ampersand-view');
 var templates = require('../templates');
 var LoginForm = require('../forms/login');
 var app = require('ampersand-app');
-var Me = require('../models/me');
 var sync = require('ampersand-sync');
 var config = require('../appconfig');
 
@@ -16,14 +15,14 @@ module.exports = View.extend({
         this.form = new LoginForm({
             el: this.queryByHook('login-form'),
             submitCallback: function (data) {
-                var rawRequest = sync('create', null, {
+                sync('create', null, {
                     url: config.apiUrl + '/login',
-                    headers: {"Content-Type": "application/json"},
+                    headers: {'Content-Type': 'application/json'},
                     data: JSON.stringify({
                         email: data.email,
                         password: data.password
                     }),
-                    success: function(body, status, responseObject) {
+                    success: function(body) {
                         window.localStorage.user_id = body.user;
                         window.localStorage.person = body.person;
                         window.localStorage.token = body.token;

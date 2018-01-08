@@ -9,7 +9,7 @@ window.app = app;
 
 app.extend({
     router: new Router(),
-    init: function(optionalPage) {
+    init: function() {
         this.me = new Me({
             user_id: parseInt(window.localStorage.user_id),
             token: window.localStorage.token

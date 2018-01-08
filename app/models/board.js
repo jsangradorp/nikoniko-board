@@ -4,7 +4,6 @@ var BaseModel = require('./baseModel');
 var config = require('../appconfig');
 var PeopleModel = require('./people');
 var moment = require('moment');
-var _ = require('lodash');
 
 
 module.exports = BaseModel.extend({

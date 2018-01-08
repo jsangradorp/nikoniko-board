@@ -2,8 +2,6 @@
 
 var BaseModel = require('./baseModel');
 var config = require('../appconfig');
-var PersonModel = require('./person');
-var BoardsModel = require('./boards');
 
 
 module.exports = BaseModel.extend({
@@ -18,7 +16,7 @@ module.exports = BaseModel.extend({
         deps: ['user_id'],
         editurl: {
             fn: function() {
-                return "/users/" + this.user_id;
+                return '/users/' + this.user_id;
             }
         }
     }

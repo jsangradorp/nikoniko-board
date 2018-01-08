@@ -3,8 +3,6 @@
 
 var View = require('ampersand-view');
 var templates = require('../templates');
-var ReportedFeeling = require('../models/reportedFeeling');
-var app = require('ampersand-app');
 
 
 module.exports = View.extend({
@@ -22,7 +20,7 @@ module.exports = View.extend({
     events: {
         'click div.active': 'handleClick'
     },
-    handleClick: function(e){
+    handleClick: function(){
         this.model.rotateFeeling();
         return false;
     }

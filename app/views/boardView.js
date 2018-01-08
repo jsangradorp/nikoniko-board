@@ -12,13 +12,13 @@ module.exports = View.extend({
     render: function () {
         this.renderWithTemplate();
         this.renderSubview(
-                new BoardHeaderView({
-                    model: this.parent.model
-                }),
-                this.queryByHook('board-header'));
+            new BoardHeaderView({
+                model: this.parent.model
+            }),
+            this.queryByHook('board-header'));
         this.renderCollection(
-                this.parent.model.people,
-                BoardRowView,
-                this.queryByHook('board-rows'));
+            this.parent.model.people,
+            BoardRowView,
+            this.queryByHook('board-rows'));
     }
 });

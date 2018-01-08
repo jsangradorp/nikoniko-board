@@ -18,7 +18,7 @@ module.exports = BaseModel.extend({
         deps: ['user_id'],
         editurl: {
             fn: function() {
-                return "/userProfiles/" + this.user_id;
+                return '/userProfiles/' + this.user_id;
             }
         }
     },

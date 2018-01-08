@@ -1,0 +1,7 @@
+#!/bin/sh
+
+function check_coding_style() {
+    eslint --fix app/ config/ server.js st*
+}
+
+check_coding_style

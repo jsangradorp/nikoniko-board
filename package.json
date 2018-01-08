@@ -36,7 +36,9 @@
     "stylizer": "^2.1.0",
     "templatizer": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^4.15.0"
+  },
   "jshintConfig": {
     "asi": false,
     "browser": true,

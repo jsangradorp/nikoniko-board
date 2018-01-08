@@ -2,8 +2,6 @@
 
 var View = require('ampersand-view');
 var templates = require('../templates');
-var ReportedFeelingView = require('../views/reportedFeelingView');
-var BoardRowView = require('../views/boardRowView');
 var BoardView = require('../views/boardView');
 
 module.exports = View.extend({
