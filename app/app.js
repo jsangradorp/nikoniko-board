@@ -42,7 +42,7 @@ app.extend({
             this.router.history.navigate(url, {
                 trigger: true
             });
-        };
+        }
     },
     logout: function(){
         delete window.localStorage.token;

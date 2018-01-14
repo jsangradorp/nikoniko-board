@@ -8,4 +8,5 @@ function check_coding_style() {
     "${topdir}/node_modules/.bin/eslint" --fix app/ config/ server.js st*
 }
 
+echo Checking coding style
 check_coding_style
