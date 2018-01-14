@@ -72,10 +72,14 @@ module.exports = AmpersandView.extend({
         this.render();
 
         this.el.classList.add('show');
+        var self = this;
+        setTimeout(function(){self.hide.apply(self, null)}, 2000);
     },
 
     hide: function(e) {
-        this.preventDefault(e);
+        if (e) {
+            this.preventDefault(e);
+        }
         this.el.classList.remove('show');
     },
 
