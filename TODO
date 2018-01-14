@@ -2,4 +2,5 @@
 - Add proper README, LICENSE, CONTRIBUTING
 - Style 'parameter mandatory' messages
 - Fix craziness when logging out
+- Change default values to a local instance of the API not a public one
 - Check and fix if one user can edit other user's values
