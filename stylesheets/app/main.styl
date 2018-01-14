@@ -131,22 +131,20 @@ form label
 
 .message
   max-height: 0
-  overflow: hidden
-  z-index: 1
   width: 100%
   padding: 0
+  overflow: hidden
+  z-index: 1
   color: white
-  transition: max-height 0.5s
-  transition: padding 0.5s
+  border-radius: 20px
+  transition: max-height 0.5s ease-in-out
+  transition: padding 0.5s ease-in-out
 .message.show
   max-height: 100%
-  padding: 1.5em
+  padding: 20px
 .message.error
   background: red
-  box-shadow: inset 0 -1px 0 1px lighten(red, 2%)
 .message.warning
   background: yellow
-  box-shadow: inset 0 -1px 0 1px darken(yellow, 2%)
 .message.success
   background: green
-  box-shadow: inset 0 -1px 0 1px darken(green, 2%)
