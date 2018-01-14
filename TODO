@@ -1,5 +1,6 @@
-- Add proper README, LICENSE, CONTRIBUTING
-- Style 'parameter mandatory' messages
+- Add a link in all pages to home/login. Alternatively, always show the top
+  bar, but without the right part
 - Fix craziness when logging out
 - Change default values to a local instance of the API not a public one
+- Add proper README, LICENSE, CONTRIBUTING
 - Check and fix if one user can edit other user's values
