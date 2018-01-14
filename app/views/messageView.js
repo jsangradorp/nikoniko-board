@@ -15,11 +15,11 @@ module.exports = AmpersandView.extend({
         },
         'model.status': {
             type: 'class',
-            selector: '.message'
+            selector: '.message-box'
         }
     },
 
-    // We're adding in an event for closing the message dialog.
+    // We're adding in an event for closing the message-box dialog.
     // PROTIP: Using both touchstart and mousedown guarantees a more
     // native tapping behaviour on mobile devices.
     events: {
@@ -31,18 +31,18 @@ module.exports = AmpersandView.extend({
     initialize: function() {
         // We're letting the view instantiate its own model when it is initialized.
         this.model = new Message();
-        // If the document already contains a div with class message,
+        // If the document already contains a div with class message-box,
         // use this as the parentEl of the view.
-        if (document.querySelector('.message'))
-            this.el = document.querySelector('.message');
+        if (document.querySelector('.message-box'))
+            this.el = document.querySelector('.message-box');
         else {
-            // If .message does not exist yet, create a new div.message
+            // If .message-box does not exist yet, create a new div.message-box
             // and add it to the DOM.
             var div = document.createElement('div');
-            div.classList.add('message');
+            div.classList.add('message-box');
             document.body.appendChild(div);
             // Then make that element the parentEl of the view.
-            this.el = document.querySelector('.message');
+            this.el = document.querySelector('.message-box');
         }
     },
 
@@ -57,7 +57,7 @@ module.exports = AmpersandView.extend({
     },
 
     show: function(text, status, content) {
-        // Only message text is obligatory,
+        // Only message-box text is obligatory,
         // we should build in some fallbacks if the content
         // or status are not provided.
         if (content) this.model.content = content;
