@@ -25,7 +25,7 @@ module.exports = View.extend({
             },
             {
                 type: 'toggle',
-                selector: '.menubar'
+                selector: '.username'
             }
         ],
         'model.editurl': {

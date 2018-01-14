@@ -22,7 +22,7 @@ app.extend({
         this.message = new MessageView();
         this.router.history.start({pushState: true});
 
-        if (this.me.token == null && this.needsAuthentication(window.location)) {
+        if (!this.me.token && this.needsAuthentication(window.location)) {
             this.me.fetch({
                 error: _.bind(function(){
                     this.logout();
@@ -31,13 +31,18 @@ app.extend({
         }
     },
     needsAuthentication: function(url) {
-        return !/^(login|forgotpassword)/.test(url);
+        return !/^(login|forgotpassword|setpassword)/.test(url);
     },
     navigate: function(page) {
         var url = (page.charAt(0) === '/') ? page.slice(1) : page;
-        this.router.history.navigate(url, {
-            trigger: true
-        });
+        if (!this.me.token && this.needsAuthentication(url)) {
+            this.logout();
+        }
+        else {
+            this.router.history.navigate(url, {
+                trigger: true
+            });
+        };
     },
     logout: function(){
         delete window.localStorage.token;
