@@ -1,9 +1,11 @@
 #!/bin/bash
 
-set -x
-
 function check_coding_style() {
-    eslint --fix app/ config/ server.js st*
+    local topdir="$(cd $(dirname $0)/../.. && pwd)"
+    if [ ! -x "${topdir}/node_modules/.bin/eslint" ]; then
+        npm install eslint
+    fi
+    "${topdir}/node_modules/.bin/eslint" --fix app/ config/ server.js st*
 }
 
 check_coding_style
