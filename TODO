@@ -1,4 +1,5 @@
 - Style message boxes
+- Add proper README, LICENSE, CONTRIBUTING
 - Style 'parameter mandatory' messages
 - Fix craziness when logging out
 - Check and fix if one user can edit other user's values
