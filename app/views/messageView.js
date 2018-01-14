@@ -73,7 +73,7 @@ module.exports = AmpersandView.extend({
 
         this.el.classList.add('show');
         var self = this;
-        setTimeout(function(){self.hide.apply(self, null)}, 2000);
+        setTimeout(function(){self.hide.apply(self, null);}, 2000);
     },
 
     hide: function(e) {
