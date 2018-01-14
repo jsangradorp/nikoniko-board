@@ -18,7 +18,7 @@ module.exports = View.extend({
                     patch: true,
                     wait: true,
                     success: function (data) {
-                        alert('User profile updated');
+                        app.message.show('User profile updated', 'success');
                         if (data.name && data.name != '') {
                             app.me.name = data.name;
                         }
@@ -28,8 +28,8 @@ module.exports = View.extend({
                             window.location = 'login.html';
                         }
                     },
-                    error: function(model, response) {
-                        console.error(JSON.stringify(response));
+                    error: function() {
+                        app.message.show('Error updating profile', 'error');
                     }
                 });
                 return false;
@@ -40,8 +40,8 @@ module.exports = View.extend({
                 success: function(model) {
                     self.form.setValues({name: model.name});
                 },
-                error: function(model, response) {
-                    console.warn(JSON.stringify(response));
+                error: function() {
+                    app.message.show('Error retrieving profile', 'error');
                 }
             });
         this.renderSubview(this.form);

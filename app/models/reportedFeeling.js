@@ -42,7 +42,7 @@ module.exports = BaseModel.extend({
             {
                 wait: true,
                 error: function() {
-                    alert('error sending value');
+                    app.message.show('Error sending value', 'error');
                 }
             }
         );

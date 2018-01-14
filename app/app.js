@@ -4,6 +4,7 @@ var Router = require('./router');
 var MainView = require('./views/main');
 var Me = require('./models/me');
 var domReady = require('domready');
+var MessageView = require('./views/messageView');
 
 window.app = app;
 
@@ -18,6 +19,7 @@ app.extend({
             model: this.me,
             el: document.body
         });
+        this.message = new MessageView();
         this.router.history.start({pushState: true});
 
         if (this.me.token == null && this.needsAuthentication(window.location)) {
@@ -43,7 +45,8 @@ app.extend({
         delete window.localStorage.person;
         this.me.clear();
         this.navigate('login');
-    }
+    },
+    message: null
 });
 
 domReady(_.bind(app.init, app));

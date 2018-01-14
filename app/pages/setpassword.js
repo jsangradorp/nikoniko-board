@@ -22,12 +22,12 @@ module.exports = View.extend({
                         password: data.password
                     }),
                     success: function() {
-                        alert('Password successfully set');
+                        app.message.show('Password successfully set', 'success');
                         app.me.clear();
                         app.navigate('login');
                     },
                     error: function() {
-                        alert('Invalid password set request');
+                        app.message.show('Invalid password set request', 'error');
                     }
                 });
                 return false;

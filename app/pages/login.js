@@ -40,10 +40,8 @@ module.exports = View.extend({
                             }
                         });
                     },
-                    error: function(responseObject, status, message) {
-                        alert('Invalid login request');
-                        console.log(responseObject);
-                        console.log('Error: ' + message);
+                    error: function() {
+                        app.message.show('Email or password incorrect', 'error');
                     }
                 });
                 return false;

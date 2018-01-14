@@ -22,13 +22,11 @@ module.exports = View.extend({
                         email: data.email
                     }),
                     success: function() {
-                        alert('Code sent to email ' + data.email);
+                        app.message.show('Code sent to email ' + data.email, 'success');
                         app.navigate('setpassword');
                     },
-                    error: function(responseObject, status, message) {
-                        alert('Invalid password reset request');
-                        console.log(responseObject);
-                        console.log('Error: ' + message);
+                    error: function() {
+                        app.message.show('Invalid password reset request', 'error');
                     }
                 });
                 return false;
