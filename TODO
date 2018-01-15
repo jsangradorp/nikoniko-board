@@ -1,4 +1,2 @@
-- Check and fix if one user can edit other user's values
-- Be able to go back to the calling page when having to log in
 - Change default values to a local instance of the API not a public one
 - Add proper README, LICENSE, CONTRIBUTING
