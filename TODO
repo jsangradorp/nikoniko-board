@@ -1,4 +1,3 @@
-- Fix NaN on usersetting page
 - Check and fix if one user can edit other user's values
 - Change default values to a local instance of the API not a public one
 - Add proper README, LICENSE, CONTRIBUTING

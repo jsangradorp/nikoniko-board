@@ -15,8 +15,8 @@ module.exports = BaseModel.extend({
         email: ['string']
     },
     derived: {
-        deps: ['user_id'],
         editurl: {
+            deps: ['user_id'],
             fn: function() {
                 return '/userProfiles/' + this.user_id;
             }
