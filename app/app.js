@@ -6,8 +6,6 @@ var Me = require('./models/me');
 var domReady = require('domready');
 var MessageView = require('./views/messageView');
 
-window.app = app;
-
 app.extend({
     router: new Router(),
     init: function() {
