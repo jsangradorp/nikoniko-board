@@ -25,6 +25,7 @@
     "favicon-setter": "^0.1.1",
     "helmet": "^0.7.1",
     "local-links": "^1.2.0",
+    "local-ssl-proxy": "^1.3.0",
     "lodash": "^3.6.0",
     "moment": "^2.18.1",
     "moonboots-express": "^3.0.0",
