@@ -25,7 +25,7 @@ var fixPath = function (pathString) {
 app.use(morgan('combined'));
 app.use(compress());
 app.use(
-    serveStatic(fixPath('static'),
+    serveStatic(fixPath('static-content'),
         {
             setHeaders: function(res) {
                 res.cookie('config', JSON.stringify(config.app));

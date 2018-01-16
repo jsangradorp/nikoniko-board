@@ -1,5 +1,5 @@
 node_modules
-static/
+static-content/
 app/modules
 app/libraries
 app/templates.js

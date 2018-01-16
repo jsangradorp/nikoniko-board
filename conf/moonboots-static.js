@@ -2,7 +2,7 @@ var envify = require('envify/custom');
 
 exports.verbose = true;
 exports.directory = './output/';
-exports.public = './static/';
+exports.public = './static-content/';
 exports.moonboots = {
     main: './app/app.js',
     libraries: [],
