@@ -1,2 +1,3 @@
+- Clean up certificates, scripts, etc.
 - Change default values to a local instance of the API not a public one
 - Add proper README, LICENSE, CONTRIBUTING
