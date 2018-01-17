@@ -40,8 +40,13 @@ module.exports = View.extend({
                             }
                         });
                     },
-                    error: function() {
-                        app.message.show('Email or password incorrect', 'error');
+                    error: function(resp, status, message) {
+                        if (resp.status !== 0) {
+                            app.message.show('Email or password incorrect', 'error');
+                        }
+                        else {
+                            app.message.show('Error accessing API: ' + message, 'error');
+                        }
                     }
                 });
                 return false;
