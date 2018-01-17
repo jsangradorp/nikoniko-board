@@ -24,11 +24,10 @@ exports.moonboots = {
     beforeBuildJS: function () {
         templatizer(fixPath('templates'), fixPath('client/templates.js'));
     },
-    beforeBuildCSS: function () {
+    beforeBuildCSS: function (done) {
         stylizer({
-            infile: fixPath('stylesheets/app.styl'),
-            outfile: fixPath('stylesheets/app.css'),
-        });
+            infile: fixPath('stylesheets/app.styl')
+        }, done);
     },
     resourcePrefix: '',
     minify: true,
