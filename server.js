@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var Moonboots = require('moonboots-express');
 var morgan = require('morgan');
 var compress = require('compression');
-var config = require('./app/config');
+var config = require('./client/config');
 var semiStatic = require('semi-static');
 var serveStatic = require('serve-static');
 var stylizer = require('stylizer');
@@ -81,7 +81,7 @@ new Moonboots({
     moonboots: {
         jsFileName: 'express-app',
         cssFileName: 'express-app',
-        main: fixPath('app/app.js'),
+        main: fixPath('client/app.js'),
         developmentMode: config.isDev,
         libraries: [
         ],
@@ -96,7 +96,7 @@ new Moonboots({
             // js file is requested. Which means you can seamlessly change jade and
             // refresh in your browser to get new templates.
             if (config.isDev) {
-                templatizer(fixPath('templates'), fixPath('app/templates.js'));
+                templatizer(fixPath('templates'), fixPath('client/templates.js'));
             }
         },
         beforeBuildCSS: function (done) {

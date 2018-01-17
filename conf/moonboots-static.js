@@ -4,7 +4,7 @@ exports.verbose = true;
 exports.directory = './output/';
 exports.public = './static-content/';
 exports.moonboots = {
-    main: './app/app.js',
+    main: './client/app.js',
     libraries: [],
     stylesheets: [
         './stylesheets/app.css'

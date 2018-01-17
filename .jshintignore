@@ -1,6 +1,6 @@
 node_modules
 static-content/
-app/modules
-app/libraries
-app/templates.js
+client/modules
+client/libraries
+client/templates.js
 test/*
