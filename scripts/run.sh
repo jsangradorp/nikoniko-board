@@ -19,5 +19,4 @@ if [ "$LOCAL" = "y" -o "$LOCAL" = "1" -o "$LOCAL" = "t" ] ; then
     "${topdir}/node_modules/.bin/local-ssl-proxy" --source 9443 --target 9080 --cert "${topdir}/conf/local/localhost.crt" --key "${topdir}/conf/local/localhost.key" & proxypid=$!
 fi
 
-export GETCONFIG_ROOT="$(pwd)/app/config"
 node --no-warnings server.js
