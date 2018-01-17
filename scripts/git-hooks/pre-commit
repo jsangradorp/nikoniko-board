@@ -5,7 +5,7 @@ function check_coding_style() {
     if [ ! -x "${topdir}/node_modules/.bin/eslint" ]; then
         npm install eslint
     fi
-    "${topdir}/node_modules/.bin/eslint" --fix app/ config/ server.js st*
+    "${topdir}/node_modules/.bin/eslint" --fix app/ config/ local-server.js st*
 }
 
 echo Checking coding style

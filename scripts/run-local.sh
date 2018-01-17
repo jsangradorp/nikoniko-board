@@ -34,4 +34,4 @@ fire_proxy() {
 }
 
 fire_proxy
-node --no-warnings "${topdir}/server.js"
+node --no-warnings "${topdir}/local-server.js"

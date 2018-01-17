@@ -52,5 +52,5 @@
     "undef": true,
     "white": true
   },
-  "main": "server.js"
+  "main": "local-server.js"
 }
