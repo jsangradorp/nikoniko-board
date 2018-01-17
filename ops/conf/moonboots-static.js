@@ -24,7 +24,7 @@ exports.moonboots = {
     beforeBuildJS: function () {
         templatizer(fixPath('templates'), fixPath('client/templates.js'));
     },
-    beforeBuildCSS: function (done) {
+    beforeBuildCSS: function () {
         stylizer({
             infile: fixPath('stylesheets/app.styl'),
             outfile: fixPath('stylesheets/app.css'),
