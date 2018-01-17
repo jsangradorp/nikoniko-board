@@ -8,7 +8,7 @@ var fixPath = function (pathString) {
 };
 
 exports.verbose = true;
-exports.directory = './output/';
+exports.directory = './build/';
 exports.public = './static-content/';
 exports.moonboots = {
     main: './client/app.js',

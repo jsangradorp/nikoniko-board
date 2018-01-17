@@ -4,6 +4,6 @@
 .DS_Store
 .*.sw?
 /.cdist-venv/
-/output/
+/build/
 /ops/conf/local/localhost.crt
 /ops/conf/local/localhost.key
