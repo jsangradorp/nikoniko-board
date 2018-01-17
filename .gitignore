@@ -5,3 +5,5 @@
 .*.sw?
 /.cdist-venv/
 /output/
+/conf/local/localhost.crt
+/conf/local/localhost.key
