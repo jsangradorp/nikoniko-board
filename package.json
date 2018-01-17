@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "ampersand-app": "^1.0.0",
+    "ampersand-collection": "^2.0.2",
     "ampersand-dom": "^1.2.1",
     "ampersand-form-view": "^7.0.0",
     "ampersand-input-view": "^7.0.0",
