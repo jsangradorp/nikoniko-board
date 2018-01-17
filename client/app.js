@@ -20,7 +20,7 @@ app.extend({
         this.message = new MessageView();
         this.router.history.start({pushState: true});
 
-        if (!this.me.token && this.needsAuthentication(window.location)) {
+        if (this.shouldLogin(window.location)) {
             this.me.fetch({
                 error: _.bind(function(){
                     this.logout();
@@ -28,12 +28,15 @@ app.extend({
             });
         }
     },
+    shouldLogin: function(url) {
+        return this.needsAuthentication(url) && (!this.me.token || !this.me.name)
+    },
     needsAuthentication: function(url) {
         return !/^(login|forgotpassword|setpassword)/.test(url);
     },
     navigate: function(page) {
         var url = (page.charAt(0) === '/') ? page.slice(1) : page;
-        if (!this.me.token && this.needsAuthentication(url)) {
+        if (this.shouldLogin(url)) {
             this.logout();
         }
         else {
