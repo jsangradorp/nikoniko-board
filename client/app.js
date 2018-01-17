@@ -18,15 +18,15 @@ app.extend({
             el: document.body
         });
         this.message = new MessageView();
-        this.router.history.start({pushState: true});
+        this.router.history.start();
 
-        if (this.shouldLogin(window.location)) {
+        //if (this.shouldLogin(window.location)) {
             this.me.fetch({
                 error: _.bind(function(){
                     this.logout();
                 }, this)
             });
-        }
+        //}
     },
     shouldLogin: function(url) {
         return this.needsAuthentication(url) && (!this.me.token || !this.me.name)
