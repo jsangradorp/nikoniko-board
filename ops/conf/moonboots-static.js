@@ -1,4 +1,3 @@
-var envify = require('envify/custom');
 var path = require('path');
 var stylizer = require('stylizer');
 var templatizer = require('templatizer');
@@ -20,7 +19,6 @@ exports.moonboots = {
     cssFileName: 'nikoniko-boards',
     browserify: {
         debug: false,
-        transform: [envify({ NODE_ENV: 'default' })],
         insertGlobalVars: globalvars
     },
     beforeBuildJS: function () {

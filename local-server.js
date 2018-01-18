@@ -1,4 +1,3 @@
-var envify = require('envify/custom');
 var globalvars = require('./ops/conf/local/global-vars');
 var path = require('path');
 var express = require('express');
@@ -92,7 +91,6 @@ new Moonboots({
         ],
         browserify: {
             debug: config.isDev,
-            transform: [envify({ NODE_ENV: 'default'  })],
             insertGlobalVars: globalvars
         },
         beforeBuildJS: function () {

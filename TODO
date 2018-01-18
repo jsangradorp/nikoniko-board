@@ -1,5 +1,5 @@
-- remove envify and the convoluted config process
 - Move local-server to inside ops
-- Review the relevance of the config values in config.js for devrun or build
+- Review the relevance of the config values in config.js for devrun or build,
+  then see if appconfig + config can be reduced to just one
 - Change default values to a local instance of the API not a public one
 - Add proper README, LICENSE, CONTRIBUTING
