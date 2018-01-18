@@ -1,4 +1,3 @@
 - Review the relevance of the config values in config.js for devrun or build,
   then see if appconfig + config can be reduced to just one
-- Bail out of run and build if API_URL not specified
 - Add proper README, LICENSE, CONTRIBUTING

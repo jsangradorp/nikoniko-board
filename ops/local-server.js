@@ -1,4 +1,4 @@
-var globalvars = require('./conf/local/global-vars');
+var globalvars = require('./conf/global-vars');
 var express = require('express');
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
