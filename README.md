@@ -1,7 +1,9 @@
 # Nikoniko board
 
-A web frontend for the [Nikoniko API](https://github.com/jsangradorp/nikonikoapi),
-using the [Ampersand.js](https://ampersandjs.com/) framework.
+A web frontend for the
+[Nikoniko API](https://github.com/jsangradorp/nikonikoapi), using the
+[Ampersand.js](https://ampersandjs.com/) framework.  It is a single page app
+running 100%  on the browser.
 
 For information about what a Nikoniko board is and my motivation to develop
 one, see the aforementioned
@@ -24,6 +26,9 @@ one, see the aforementioned
 5. open [the Nikoniko Board](https://127.0.0.1:9443/) in a web browser.
 
 ## How to build and serve statically
+
+I use the [moonboots-static](https://github.com/lukekarrys/moonboots-static)
+utility for building the app.
 
 1. have [node.js](https://nodejs.org/) installed.
 2. install dependencies: `npm install`.
