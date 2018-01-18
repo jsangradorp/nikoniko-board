@@ -1,5 +1,4 @@
 var globalvars = require('./conf/local/global-vars');
-var path = require('path');
 var express = require('express');
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
@@ -16,7 +15,7 @@ var app = express();
 
 // a little helper for fixing paths for various environments
 var fixPath = function (pathString) {
-    return path.resolve(path.normalize(pathString));
+    return __dirname + '/../' + pathString; // eslint-disable-line no-undef
 };
 
 
@@ -26,7 +25,7 @@ var fixPath = function (pathString) {
 app.use(morgan('combined'));
 app.use(compress());
 app.use(
-    serveStatic(fixPath('../static-content'),
+    serveStatic(fixPath('./static-content'),
         {
             setHeaders: function(res) {
                 res.cookie('config', JSON.stringify(config.app));
@@ -87,7 +86,7 @@ new Moonboots({
         libraries: [
         ],
         stylesheets: [
-            fixPath('../stylesheets/app.css')
+            fixPath('./stylesheets/app.css')
         ],
         browserify: {
             debug: config.isDev,
@@ -98,7 +97,8 @@ new Moonboots({
             // js file is requested. Which means you can seamlessly change jade and
             // refresh in your browser to get new templates.
             if (config.isDev) {
-                templatizer(fixPath('./templates'), fixPath('./client/templates.js'));
+                templatizer(fixPath('./templates'),
+                    fixPath('./client/templates.js'));
             }
         },
         beforeBuildCSS: function (done) {

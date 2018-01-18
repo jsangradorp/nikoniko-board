@@ -1,10 +1,9 @@
-var path = require('path');
 var stylizer = require('stylizer');
 var templatizer = require('templatizer');
 var globalvars = require('./local/global-vars');
 
 var fixPath = function (pathString) {
-    return path.resolve(path.normalize(pathString));
+    return __dirname + '/../../' + pathString; // eslint-disable-line no-undef
 };
 
 exports.verbose = true;
