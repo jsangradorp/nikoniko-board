@@ -49,5 +49,5 @@
     "undef": true,
     "white": true
   },
-  "main": "local-server.js"
+  "main": "./ops/local-server.js"
 }

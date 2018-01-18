@@ -16,7 +16,7 @@ trap "kill_children" 0
 main() {
     install_packages
     fire_proxy
-    node --no-warnings "${topdir}/local-server.js"
+    node --no-warnings "${topdir}/ops/local-server.js"
 }
 
 install_packages() {

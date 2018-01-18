@@ -1,4 +1,4 @@
-var globalvars = require('./ops/conf/local/global-vars');
+var globalvars = require('./conf/local/global-vars');
 var path = require('path');
 var express = require('express');
 var helmet = require('helmet');
@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var Moonboots = require('moonboots-express');
 var morgan = require('morgan');
 var compress = require('compression');
-var config = require('./client/config');
+var config = require('../client/config');
 var semiStatic = require('semi-static');
 var serveStatic = require('serve-static');
 var stylizer = require('stylizer');
@@ -26,7 +26,7 @@ var fixPath = function (pathString) {
 app.use(morgan('combined'));
 app.use(compress());
 app.use(
-    serveStatic(fixPath('static-content'),
+    serveStatic(fixPath('../static-content'),
         {
             setHeaders: function(res) {
                 res.cookie('config', JSON.stringify(config.app));
@@ -82,12 +82,12 @@ new Moonboots({
     moonboots: {
         jsFileName: 'express-app',
         cssFileName: 'express-app',
-        main: fixPath('client/app.js'),
+        main: fixPath('./client/app.js'),
         developmentMode: config.isDev,
         libraries: [
         ],
         stylesheets: [
-            fixPath('stylesheets/app.css')
+            fixPath('../stylesheets/app.css')
         ],
         browserify: {
             debug: config.isDev,
@@ -98,7 +98,7 @@ new Moonboots({
             // js file is requested. Which means you can seamlessly change jade and
             // refresh in your browser to get new templates.
             if (config.isDev) {
-                templatizer(fixPath('templates'), fixPath('client/templates.js'));
+                templatizer(fixPath('./templates'), fixPath('./client/templates.js'));
             }
         },
         beforeBuildCSS: function (done) {
@@ -107,8 +107,8 @@ new Moonboots({
             // and see new styles on refresh.
             if (config.isDev) {
                 stylizer({
-                    infile: fixPath('stylesheets/app.styl'),
-                    outfile: fixPath('stylesheets/app.css'),
+                    infile: fixPath('./stylesheets/app.styl'),
+                    outfile: fixPath('./stylesheets/app.css'),
                     development: true
                 }, done);
             } else {
