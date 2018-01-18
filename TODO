@@ -1,2 +1,4 @@
+- remove envify and the convoluted config process
+- Move local-server to inside ops
 - Change default values to a local instance of the API not a public one
 - Add proper README, LICENSE, CONTRIBUTING
