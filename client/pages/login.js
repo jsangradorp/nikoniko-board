@@ -5,7 +5,7 @@ var templates = require('../templates');
 var LoginForm = require('../forms/login');
 var app = require('ampersand-app');
 var sync = require('ampersand-sync');
-var config = require('../appconfig');
+var config = require('../config');
 
 module.exports = View.extend({
     pageTitle: 'Nikoniko Board - Login',
@@ -16,7 +16,7 @@ module.exports = View.extend({
             el: this.queryByHook('login-form'),
             submitCallback: function (data) {
                 sync('create', null, {
-                    url: config.apiUrl + '/login',
+                    url: config.app.apiUrl + '/login',
                     headers: {'Content-Type': 'application/json'},
                     data: JSON.stringify({
                         email: data.email,

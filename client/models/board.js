@@ -1,13 +1,13 @@
 'use strict';
 
 var BaseModel = require('./baseModel');
-var config = require('../appconfig');
+var config = require('../config');
 var PeopleModel = require('./people');
 var moment = require('moment');
 
 
 module.exports = BaseModel.extend({
-    urlRoot: config.apiUrl + '/boards',
+    urlRoot: config.app.apiUrl + '/boards',
     props: {
         id: ['number'],
         label: ['string'],

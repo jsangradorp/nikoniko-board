@@ -2,8 +2,8 @@
 
 
 var BaseModel = require('./baseModel');
-var config = require('../appconfig');
-var feelings = require('../feelings');
+var config = require('../config');
+var feelings = require('./feelings');
 var moment = require('moment');
 var app = require('ampersand-app');
 
@@ -28,7 +28,7 @@ module.exports = BaseModel.extend({
         }
     },
     url: function() {
-        return config.apiUrl + '/reportedfeelings/boards/' + this.board_id +
+        return config.app.apiUrl + '/reportedfeelings/boards/' + this.board_id +
             '/people/' + this.person_id + '/dates/' + this.date;
     },
     rotateFeeling: function() {

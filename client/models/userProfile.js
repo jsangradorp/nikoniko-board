@@ -1,12 +1,12 @@
 'use strict';
 
 var BaseModel = require('./baseModel');
-var config = require('../appconfig');
+var config = require('../config');
 
 
 module.exports = BaseModel.extend({
     idAttribute: 'user_id',
-    urlRoot: config.apiUrl + '/userProfiles',
+    urlRoot: config.app.apiUrl + '/userProfiles',
     props: {
         user_id: ['number'],
         name: ['string'],

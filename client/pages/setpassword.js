@@ -4,7 +4,7 @@ var View = require('ampersand-view');
 var templates = require('../templates');
 var SetPasswordForm = require('../forms/setpassword');
 var app = require('ampersand-app');
-var config = require('../appconfig');
+var config = require('../config');
 var sync = require('ampersand-sync');
 
 module.exports = View.extend({
@@ -16,7 +16,7 @@ module.exports = View.extend({
             el: this.queryByHook('setpassword-form'),
             submitCallback: function (data) {
                 sync('create', null, {
-                    url: config.apiUrl + '/passwordReset/' + data.password_reset_code.toString(),
+                    url: config.app.apiUrl + '/passwordReset/' + data.password_reset_code.toString(),
                     headers: {'Content-Type': 'application/json'},
                     data: JSON.stringify({
                         password: data.password
