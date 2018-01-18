@@ -3,7 +3,7 @@ var templatizer = require('templatizer');
 var globalvars = require('./global-vars');
 
 var fixPath = function (pathString) {
-    return __dirname + '/../../' + pathString; // eslint-disable-line no-undef
+    return __dirname + '/../../../' + pathString; // eslint-disable-line
 };
 
 exports.verbose = true;

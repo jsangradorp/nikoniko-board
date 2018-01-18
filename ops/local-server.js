@@ -7,7 +7,6 @@ var Moonboots = require('moonboots-express');
 var morgan = require('morgan');
 var compress = require('compression');
 var config = require('../client/config');
-var semiStatic = require('semi-static');
 var serveStatic = require('serve-static');
 var stylizer = require('stylizer');
 var templatizer = require('templatizer');
@@ -15,7 +14,7 @@ var app = express();
 
 // a little helper for fixing paths for various environments
 var fixPath = function (pathString) {
-    return __dirname + '/../' + pathString; // eslint-disable-line no-undef
+    return __dirname + '/../' + pathString; // eslint-disable-line
 };
 
 
@@ -24,21 +23,7 @@ var fixPath = function (pathString) {
 // -----------------
 app.use(morgan('combined'));
 app.use(compress());
-app.use(
-    serveStatic(fixPath('./static-content'),
-        {
-            setHeaders: function(res) {
-                res.cookie('config', JSON.stringify(config.app));
-            }
-        }
-    )
-);
-
-// we only want to expose tests in dev
-if (config.isDev) {
-    app.use(serveStatic(fixPath('test/assets')));
-    app.use(serveStatic(fixPath('test/spacemonkey')));
-}
+app.use(serveStatic(fixPath('./static-content'), {}));
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -52,27 +37,6 @@ app.use(helmet.xssFilter());
 app.use(helmet.nosniff());
 
 app.set('view engine', 'jade');
-
-
-// -----------------
-// Enable the functional test site in development
-// -----------------
-if (config.isDev) {
-    app.get('/test*', semiStatic({
-        folderPath: fixPath('test'),
-        root: '/test'
-    }));
-}
-
-
-// -----------------
-// Set our client config cookie
-// -----------------
-app.use(function (req, res, next) {
-    res.cookie('config', JSON.stringify(config.app));
-    next();
-});
-
 
 // ---------------------------------------------------
 // Configure Moonboots to serve our client application
@@ -122,4 +86,4 @@ new Moonboots({
 
 // listen for incoming http requests on the port as specified in our config
 app.listen(config.http.port);
-console.log('Express App is running at: http://' + config.http.listen + ':' + config.http.port + ' Yep. That\'s pretty awesome.'); // eslint-disable-line no-console
+console.log('Express App is running at: http://' + config.http.listen + ':' + config.http.port + ' Yep. That\'s pretty awesome.'); // eslint-disable-line

@@ -14,7 +14,7 @@ install_packages() {
 }
 
 build() {
-    "${topdir}/node_modules/.bin/moonboots" "$(dirname $0)/conf/moonboots-static.js" # Won't work if calling as absolute path
+    "${topdir}/node_modules/.bin/moonboots" "$(dirname $0)/conf/build/moonboots-static.js" # Won't work if calling as absolute path
 }
 
 deploy() {
