@@ -1,3 +1,4 @@
+
 var config = {
     'isDev': true,
     'isSecure': false,
@@ -13,7 +14,7 @@ var config = {
         'port': 9080
     },
     'app': {
-        'apiUrl': 'https://api.nikonikoboards.com',
+        'apiUrl': process.env.API_URL || ((typeof API_URL !== 'undefined') && API_URL) || 'missing config',
         'debugMode': false
     }
 };

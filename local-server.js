@@ -1,3 +1,5 @@
+var envify = require('envify/custom');
+var globalvars = require('./ops/conf/local/global-vars');
 var path = require('path');
 var express = require('express');
 var helmet = require('helmet');
@@ -89,7 +91,9 @@ new Moonboots({
             fixPath('stylesheets/app.css')
         ],
         browserify: {
-            debug: config.isDev
+            debug: config.isDev,
+            transform: [envify({ NODE_ENV: 'default'  })],
+            insertGlobalVars: globalvars
         },
         beforeBuildJS: function () {
             // This re-builds our template files from jade each time the app's main

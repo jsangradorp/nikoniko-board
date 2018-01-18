@@ -2,6 +2,7 @@ var envify = require('envify/custom');
 var path = require('path');
 var stylizer = require('stylizer');
 var templatizer = require('templatizer');
+var globalvars = require('./local/global-vars');
 
 var fixPath = function (pathString) {
     return path.resolve(path.normalize(pathString));
@@ -19,7 +20,8 @@ exports.moonboots = {
     cssFileName: 'nikoniko-boards',
     browserify: {
         debug: false,
-        transform: [envify({ NODE_ENV: 'default' })]
+        transform: [envify({ NODE_ENV: 'default' })],
+        insertGlobalVars: globalvars
     },
     beforeBuildJS: function () {
         templatizer(fixPath('templates'), fixPath('client/templates.js'));
