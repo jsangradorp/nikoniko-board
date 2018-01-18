@@ -2,7 +2,6 @@ var globalvars = require('./conf/global-vars');
 var express = require('express');
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
 var Moonboots = require('moonboots-express');
 var morgan = require('morgan');
 var compress = require('compression');
@@ -25,7 +24,6 @@ app.use(morgan('combined'));
 app.use(compress());
 app.use(serveStatic(fixPath('./static-content'), {}));
 
-app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
