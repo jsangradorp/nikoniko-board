@@ -2,7 +2,7 @@
 
 
 var View = require('ampersand-view');
-var setweekend = require('../setweekend');
+var setweekend = require('../includes/setweekend');
 var _ = require('lodash');
 
 
