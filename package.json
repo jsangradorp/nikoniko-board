@@ -34,7 +34,7 @@
     "semi-static": "^0.0.5",
     "serve-static": "^1.13.2",
     "stylizer": "^2.2.0",
-    "templatizer": "^1.0.0"
+    "templatizer": "^2.0.7"
   },
   "jshintConfig": {
     "asi": false,
