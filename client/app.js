@@ -21,15 +21,15 @@ app.extend({
         this.router.history.start();
 
         //if (this.shouldLogin(window.location)) {
-            this.me.fetch({
-                error: _.bind(function(){
-                    this.logout();
-                }, this)
-            });
+        this.me.fetch({
+            error: _.bind(function(){
+                this.logout();
+            }, this)
+        });
         //}
     },
     shouldLogin: function(url) {
-        return this.needsAuthentication(url) && (!this.me.token || !this.me.name)
+        return this.needsAuthentication(url) && (!this.me.token || !this.me.name);
     },
     needsAuthentication: function(url) {
         return !/^(login|forgotpassword|setpassword)/.test(url);

@@ -6,11 +6,8 @@ function check_coding_style() {
         npm install eslint
     fi
     "${topdir}/node_modules/.bin/eslint" --fix \
-        app/ \
-        config/ \
-        ops/ \
-        stylesheets/ \
-        static-content/
+        client/ \
+        ops/
 }
 
 echo Checking coding style
