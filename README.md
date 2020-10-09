@@ -1,3 +1,5 @@
+Development of this software has been moved to https://gitlab.com/jsangradorp/nikoniko-board
+
 # Nikoniko board
 
 A web frontend for the
